@@ -103,6 +103,6 @@ const mainConfig = {
 };
 
 module.exports = [
-    mainConfig,
-    // ...config,
+    // mainConfig,
+    ...config,
 ];

@@ -91,7 +91,7 @@ $(function () {
 
             var circle = this.snap
                 .image(
-                    '/images/computer.png',
+                    'computer.png',
                     coords[0] - this.COMPUTER_SIZE / 2,
                     coords[1]  - this.COMPUTER_SIZE / 2,
                     this.COMPUTER_SIZE, this.COMPUTER_SIZE

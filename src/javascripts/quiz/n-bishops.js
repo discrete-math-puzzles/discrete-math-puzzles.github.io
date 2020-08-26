@@ -25,7 +25,7 @@ $(function () {
                 );
 
                 this.bishopImages.push(this.snap
-                    .image('/images/bishop.png', i * this.size, j * this.size, this.size, this.size)
+                    .image('bishop.png', i * this.size, j * this.size, this.size, this.size)
                     .attr({ display: 'none' })
                 );
 

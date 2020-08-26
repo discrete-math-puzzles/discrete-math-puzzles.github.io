@@ -25,7 +25,7 @@ $(function () {
                 );
 
                 this.knightImages.push(this.snap
-                    .image('/images/knight.svg', i * this.size, j * this.size, this.size, this.size)
+                    .image('knight.svg', i * this.size, j * this.size, this.size, this.size)
                     .attr({ display: 'none' })
                 );
 

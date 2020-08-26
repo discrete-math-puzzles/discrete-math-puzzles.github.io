@@ -7,10 +7,10 @@ import right from '../../images/right.png';
 import down from '../../images/down.png';
 
 $(function () {
-    var plusSrc = '/images/plus.png';
-    var minusSrc = '/images/minus.png';
-    var rightSrc = '/images/right.png';
-    var downSrc = '/images/down.png';
+    var plusSrc = 'plus.png';
+    var minusSrc = 'minus.png';
+    var rightSrc = 'right.png';
+    var downSrc = 'down.png';
 
     var a1 = [
         [1, 1, 1, 1],

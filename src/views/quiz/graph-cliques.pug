@@ -23,7 +23,7 @@ block container
     div(class='tab-content')
         div(role='tabpanel', class='tab-pane active', id='level1')
             div(class='center text-center padded' id='graphCliques0')
-                include ../../../public/images/friends-graph.svg
+                include ../../images/friends-graph.svg
                 .graph-cliques-error1 There is a pair of strangers among the selected people.
                 .graph-cliques-error2 Try to find a larger group!
 
@@ -34,7 +34,7 @@ block container
 
         div(role='tabpanel', class='tab-pane', id='level2')
             div(class='center text-center padded' id='graphCliques1')
-                include ../../../public/images/friends-graph.svg
+                include ../../images/friends-graph.svg
                 .graph-cliques-error1 There is a pair of friends among the selected people.
                 .graph-cliques-error2 Try to find a larger group!
 
@@ -48,10 +48,10 @@ block container
             div(class='center text-center padded' id='graphCliques2')
                 .svg-side-container
                     .svg-side#graphCliques2-left
-                        include ../../../public/images/complement-graph.svg
+                        include ../../images/complement-graph.svg
                 .svg-side-container
                     .svg-side#graphCliques2-right
-                        include ../../../public/images/complement-graph.svg
+                        include ../../images/complement-graph.svg
                 .graph-cliques-error1 There is no 4-tuple without edges on the right.
 
             p(class='center text-center')

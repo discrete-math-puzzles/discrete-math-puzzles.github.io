@@ -2,8 +2,8 @@ var coreCss = require('../../stylesheets/style.styl');
 var core = require('../core');
 
 $(function () {
-    var whiteKnightUrl = '/images/knight.svg';
-    var blackKnightUrl = '/images/knight-black.svg';
+    var whiteKnightUrl = 'knight.svg';
+    var blackKnightUrl = 'knight-black.svg';
     var EMPTY_CELL = 0;
     var WHITE_KNIGHT = 1;
     var BLACK_KNIGHT = 2;

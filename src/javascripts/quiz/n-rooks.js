@@ -24,7 +24,7 @@ $(function () {
                 );
 
                 this.rookImages.push(this.snap
-                    .image('/images/rook.png', i * this.size, j * this.size, this.size, this.size)
+                    .image('rook.png', i * this.size, j * this.size, this.size, this.size)
                     .attr({ display: 'none' })
                 );
 

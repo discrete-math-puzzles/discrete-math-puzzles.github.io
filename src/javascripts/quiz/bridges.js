@@ -53,7 +53,7 @@ $(function () {
 
     var Bridge = function (targetName, id, cb) {
         this.snap = Snap(targetName).attr({ viewBox: '0 0 544 646' });
-        this.snap.image('/images/bridge' + id + '.svg', 0, 0, 544, 646);
+        this.snap.image('bridge' + id + '.svg', 0, 0, 544, 646);
         this._id = id;
         this._cb = cb;
 

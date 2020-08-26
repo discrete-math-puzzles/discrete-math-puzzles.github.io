@@ -25,7 +25,7 @@ $(function () {
                 );
 
                 this.queenImages.push(this.snap
-                    .image('/images/queen.png', i * this.size, j * this.size, this.size, this.size)
+                    .image('queen.png', i * this.size, j * this.size, this.size, this.size)
                     .attr({ display: 'none' })
                 );
 

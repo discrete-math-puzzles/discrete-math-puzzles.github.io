@@ -4,7 +4,7 @@ var core = require('../core');
 import img from '../../images/piece.png';
 
 $(function () {
-    var pieceImageSrc = '/images/piece.png';
+    var pieceImageSrc = 'piece.png';
 
     var PieceOnChessboard = function (targetName, steps, cb) {
         var maxSize = 600;
