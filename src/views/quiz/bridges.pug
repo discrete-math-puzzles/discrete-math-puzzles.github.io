@@ -1,0 +1,41 @@
+extends ../layout.pug
+
+block pagetitle
+    title Bridges of Königsberg
+
+block title
+    div(class='container')
+        h1 Bridges of Königsberg
+        p(class='subtitle text-center level level1 active') You are in the 18th century Königsberg, Prussia and your goal is to find a walk through the city that crosses each of N bridges exactly once. First, select an island to start your walk followed by selecting bridges in a one-by-one fashion.
+        p(class='subtitle text-center level level2') Now, transporting ourselves to today, where Königsberg is Kaliningrad in Russia, whose map is shown below. Some bridges have been destroyed and some new ones have been built. Let us indulge in the same activity. Is it possible to plan such a walk in today's Kaliningrad? 
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 7
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 6
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded')
+                svg(id='bridge1', class='fixed', width='100%', height='100%')
+
+                p(class='center text-center')
+                    button(type='button', id='impossible', data-id='1', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                    button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                svg(id='bridge2', class='fixed', width='100%', height='100%')
+        
+                p(class='center text-center')
+                    button(type='button', id='impossible', data-id='2', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+                    button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+    p(class='center text-center')
+        span(id='hint')
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/bridges.js')

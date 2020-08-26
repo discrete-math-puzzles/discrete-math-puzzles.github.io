@@ -1,0 +1,46 @@
+extends ../layout.pug
+
+block pagetitle
+    title Guarini's Puzzle
+
+mixin tabpanel-summing-up-digits(level, possible)
+    div(role='tabpanel', class='tab-pane ' + (level == 1 ? 'active' : ''), id='level' + level)
+        div(class='center text-center padded' style='max-width: 400px; margin: auto')
+            svg(id='knight1', width='100%', height='100%')
+
+        p(class='center text-center')
+            button(
+                type='button',
+                id=possible ? 'possible' : 'impossible',
+                data-id=level,
+                class='btn btn-default',
+                data-toggle='modal'
+                data-target= possible ? '#possible_modal' : ''
+            ) It's impossible
+            button(type='button', class='reset', data-id=level, class='btn btn-info') Reset
+
+        p(class='center text-center')
+            span(id='hint')
+
+block title
+    div(class='container')
+        h1 Guarini's Puzzle
+        p(class='subtitle text-center level level1 active') Exchange the places of the white knights and the black knights.
+        p(class='subtitle text-center level level2') Move the two white knight to the bottom corners, and the two black knights to the top corners.
+        p(class='subtitle text-center level level3') Move the three white knight to the bottom cells of the board, and the three black knights to the top cells.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        each i in [0, 1, 2]
+            li(role='presentation', class=i == 0 ? 'active' : undefined)
+                a(href, data-target='#level' + (i + 1), role='tab', data-toggle='tab') Level #{i + 1}
+
+    div(class='tab-content')
+        +tabpanel-summing-up-digits(1, true)
+        +tabpanel-summing-up-digits(2, false)
+        +tabpanel-summing-up-digits(3, true)
+
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/guarinis-puzzle.js')

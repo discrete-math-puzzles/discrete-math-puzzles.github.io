@@ -1,0 +1,65 @@
+extends ../layout.pug
+
+block pagetitle
+    title Graph  Cliques
+
+block title
+    div(class='container')
+        h1 Graph Cliques
+        p(class='subtitle text-center level level1 active') Friends. Two people are connected by an edge if they are friends. Find the largest group of mutual friends.
+        p(class='subtitle text-center level level2') Strangers. Two people are connected by an edge if they are friends. Find the largest group of strangers.
+        p(class='subtitle text-center level level3') Complement Graph. Connect vertices in the graph on the left, such that its complementary graph on the right has 4 vertices without any edges between them.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3
+
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded' id='graphCliques0')
+                include ../../../public/images/friends-graph.svg
+                .graph-cliques-error1 There is a pair of strangers among the selected people.
+                .graph-cliques-error2 Try to find a larger group!
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id=1, data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default check-quiz', data-id=1) Check
+                button(type='button', class='reset', data-id=1, class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded' id='graphCliques1')
+                include ../../../public/images/friends-graph.svg
+                .graph-cliques-error1 There is a pair of friends among the selected people.
+                .graph-cliques-error2 Try to find a larger group!
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id=2, data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default check-quiz', data-id=2) Check
+                button(type='button', class='reset', data-id=2, class='btn btn-info') Reset
+
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded' id='graphCliques2')
+                .svg-side-container
+                    .svg-side#graphCliques2-left
+                        include ../../../public/images/complement-graph.svg
+                .svg-side-container
+                    .svg-side#graphCliques2-right
+                        include ../../../public/images/complement-graph.svg
+                .graph-cliques-error1 There is no 4-tuple without edges on the right.
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id=3, data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default check-quiz', data-id=3) Check
+                button(type='button', class='reset', data-id=3, class='btn btn-info') Reset
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/graph-cliques.js')
+    script(src='/javascripts/quiz/graph-cliques-level3.js')

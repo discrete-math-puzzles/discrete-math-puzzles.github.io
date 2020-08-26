@@ -1,0 +1,77 @@
+#tower1, #tower2, #tower3
+  width: 100%;
+  max-width: 800px;
+  height: 240px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  margin: 0 auto;
+
+@media only screen and (max-width: 800px) and (orientation: portrait)
+  #tower1, #tower2, #tower3
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+
+    .tower
+      margin: 70px 0 0 0;
+
+.tower
+  width: 100%;
+  height: 240px;
+  border-bottom: 16px solid #337ab7;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  margin: 70px 50px 0 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  cursor: pointer;
+  
+  &:before
+    width: 16px;
+    height: 100%;
+    content: '';
+    display: block;
+    background: #337ab7;
+    position: absolute;
+    bottom: -8px;
+    left: calc(50% - 8px);
+    z-index: 10;
+
+  &:last-child
+    margin: 70px 0 0 0;
+
+.disk
+  list-style: none;
+  height: 30px;
+  display: block;
+  font-size: 0;
+  z-index: 20;
+
+  &.hold
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+.disk-1
+  width: 40px;
+  background-color: #5cb85c;
+
+.disk-2
+  width: 90px;
+  background-color: #5bc0de;
+
+.disk-3
+  width: 140px;
+  background-color: #f0ad4e;
+
+.disk-4
+  width: 190px;
+  background-color: #d9534f;

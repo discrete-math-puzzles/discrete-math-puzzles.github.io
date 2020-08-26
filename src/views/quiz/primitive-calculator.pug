@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block pagetitle
+    title Primitive calculator
+
+block title
+    div(class='container')
+        h1 Primitive calculator
+        p(class='subtitle text-center') Find the minimum number of operations needed to get a positive integer n from 1 using only three primitive operations: add 1, multiply by 2, or multiply by 3.
+
+block container
+    div(class='center text-center padded primitive-calculator')
+        ul(class='nav nav-tabs', role='tablist')
+            each value, key in [6, 8, 20, 34, 99]
+                li(role='presentation', class= (key == 0 ? 'active' : ''))
+                    a(href data-target='#level' + (key + 1) role='tab' data-toggle='tab')= 'Level ' + (key + 1) + ': n = ' + value
+
+        div(class='tab-content')
+            each value, key in [6, 8, 20, 34, 99]
+                div(role='tabpanel', class='tab-pane ' + (key == 0 ? 'active': ''), id='level' + (key + 1))
+                    div(class='center text-center padded')
+                        div(class='calculator-wrapper')
+                            div(class='field') 1
+                            div(class='buttons')
+                                button(type='button', class='btn btn-default first', data-id=(key + 1)) +1
+                                button(type='button', class='btn btn-default second', data-id=(key + 1)) x2
+                                button(type='button', class='btn btn-default third', data-id=(key + 1)) x3
+                        
+                    div
+                        span(class='statistics') Press count: 0
+                        p(class='center text-center')
+                            button(type='button', class='btn btn-info reset', data-id=(key + 1)) Reset
+
+    div(class='modal fade primitive-calculator__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, a better solution exists.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/primitive-calculator.js')

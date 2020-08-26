@@ -1,0 +1,93 @@
+extends layout
+
+block pagetitle
+    title Quizzes
+
+block title
+    h1 Quizzes
+    p Clean interactive quizzes aiming to develop students' curiosity and problem solving skills.
+
+block container
+  div(class='row')
+    div(class='col-sm-4')
+      h3 Course 1: Why Proofs?
+      p
+        ul
+          li Introduction
+          li Existence proofs
+            ul
+              li Cutting a figure into two equal parts
+              li 
+                a(href='/app/quiz-split-weights') Splitting weights
+          li How to find an example?
+            ul
+              li
+                a(href='/app/quiz-magic-square') Magic square with 1, 2, 3, 4, 5, 6, 7, 8, 9
+              li Multiplicative magic square with different positive integer
+              li
+                a(href='/app/quiz-florin-coins') Paying 5 florins via 7- and 13-florin coins
+              li
+                a(href='/app/quiz-three-hotels') 3 hotels
+          li Computer search
+            ul
+              li 
+                a(href='/app/quiz-n-queens') Queens not attacking each other
+              li 
+                a(href='/app/quiz-n-diagonals') Diagonals not touching each other
+          li Optimality
+            ul
+              li 
+                a(href='/app/quiz-n-rooks') Maximum number of rooks
+              li 
+                a(href='/app/quiz-n-knights') Maximum number of knights
+              li 
+                a(href='/app/quiz-n-bishops') Maximum number of bishops
+              li 
+                a(href='/app/quiz-twice-numbers') Maximum subset without x and 2x
+          li Recursion
+            ul
+              li 
+                a(href='/app/quiz-hanoi-towers') Hanoi towers
+              li Largest amount impayable with given coin types
+              li
+                a(href='/app/quiz-opposite-colors') Two cells of opposite colors
+          li Induction
+            ul
+              li 
+                a(href='/app/quiz-regular-graph') 5-regular graph
+            
+          li Examples, counterexamples, logic
+            ul
+              li For every integer n>1 the number n^2+n+41 is prime?
+          li Reduction ad absurdum and pigeon hole principle
+            ul
+              li 
+                a(href='/app/quiz-candies') 30 candies
+              li Put numbers 1..64 on the chessboard in such a way that neighbors (common side) differ at most by 4
+              li put 10 integers around a circle in such a way that each of them is an arithmetic mean of its two neighbors, and not all numbers are the same
+              li is it possible to put numbers 1 2 3 4 5 6 7 8 around the circle in such a way that (a) sum of any two neighbors is odd; (b) sum of neighbors is even; (c) the same question for 1 2 3 4 5 6 7 and odd sum; (d) for 1 2 3 4 5 6 7 and even sum
+          li Invariants, double counting, termination
+
+          li Even and odd numbers and permutations
+            ul
+              li
+                a(href='/app/quiz-piece-on-chessboard') Pieces on chessboard.
+              li a turtle is going forward one unit, then turns right or left (by 90 degrees), moves one unit, turns again etc. Can it return to original position after 15/16/17/18 moves?
+              li is it possible to place signs in the expression 129 to get result 0? 1? 2? 100?
+              li there are 5 objects in a row labeled a,b,c,d,e,f. The goal is to put them in a different order using given number of transpositions (by mouse?), or declare that this is not possible. Two configurations that should be achieved by 20/21 transpositions (if this is not possible, this should be declared).
+              li the same as previous but only transposition of neighbors are allowed. (One of the required permutations is a transposition of two non-neighbor elements.)
+
+          li Project: 15-game
+            ul
+              li
+                a(href='/app/quiz-15-game') Fix some configurations (or claim that they are not fixable)
+
+    div(class='col-sm-4')
+      h3 Course 2: Combinatorics?
+      p to be written
+      
+    div(class='col-sm-4')
+      h3 Course 3: Graphs
+      p
+        ul
+          li Introduction

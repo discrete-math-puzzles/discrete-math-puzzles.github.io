@@ -1,0 +1,84 @@
+extends ../layout.pug
+
+block pagetitle
+    title Arthur’s Books
+
+block title
+    div(class='container')
+        h1 Arthur’s Books
+        p(class='subtitle text-center level level0 active') King Arthur has a shelf with 10 books, numbered 1,2,3,...,10. Over the years, the volumes got disordered. Arthur tries to order the books in the increasing order by exchanging positions of two books at once. Since the books are heavy, he can only switch two volumes each day. Help Merlin to order the books.
+        each i in [2,3,4,5]
+            p(class='subtitle text-center level level' + (i - 1)) King Arthur has a shelf with 10 books, numbered 1,2,3,...,10. Over the years, the volumes got disordered. Arthur tries to order the books in the increasing order by exchanging positions of two books at once. Since the books are heavy, he can only switch two volumes each day. Help Merlin to order the books.
+        p(class='subtitle text-center level level5') King Arthur has a shelf with 10 books, numbered 1,2,3,...,10. Over the years, the volumes got disordered. Arthur tries to order the books in the increasing order by exchanging positions of two books at once. Since the books are heavy, he can only switch two volumes each day. Help Merlin to order the books.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level0' role='tab' data-toggle='tab') Level 1
+        each val,i in ['5 Days', '7 Days', '7 Days', '9 Days', 'Worst case']
+            li(role='presentation')
+                a(href data-target='#level' + (i + 1) role='tab' data-toggle='tab') Level #{i+2} (#{val})
+
+    div(class='tab-content')
+        each val,i in ['Solve Merlin\'s task on the picture below.', 'Solve Merlin\'s task on the picture below in at most 5 days.', 'Solve Merlin\'s task on the picture below in at most 7 days.', 'Solve Merlin\'s task on the picture below in at most 7 days.', 'Solve Merlin\'s task on the picture below in at most 9 days.']
+            div(role='tabpanel', class='tab-pane' + (i == 0 ? ' active' : ''), id='level' + i)
+                div(class='center text-center padded')
+                    .arturs-books__container
+                        .arturs-books__steps
+                            .arturs-books__rule #{val}
+                            span Days:&nbsp;
+                            span.arturs-books__steps-number
+                        .arturs-books__shelf
+                            each i in [1,2,3,4,5,6,7,8,9,10]
+                                .arturs-books__book-container
+                                    .arturs-books__book(data-number = i)
+                                        .arturs-books__logo
+                                        .arturs-books__number _
+                    .arturs-books__container--no-border
+                        .arturs-books__shelf
+                            each i in [1,2,3,4,5,6,7,8,9,10]
+                                .arturs-books__number-container
+                                    .arturs-books__slot-number #{i}
+
+                p(class='center text-center')
+                    button(type='button', id='possible', class='btn btn-default', data-id=i, data-toggle='modal', data-target='#possible_modal') It's impossible
+                    button(type='button', data-id=i, class='btn btn-info reset') Reset
+
+                p(class='center text-center')
+                    span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level5')
+            div(class='center text-center padded')
+                .arturs-books__solver
+                    .arturs-books__container
+                        .arturs-books__display
+                            .arturs-books__rule Find an arrangement of books such that it takes Merlin as many days as possible to solve the task.
+                            .arturs-books__steps-step-description
+                            .arturs-books__steps-start-description Press solve to see the solution
+                        .arturs-books__shelf
+                            each i in [1,2,3,4,5,6,7,8,9,10]
+                                .arturs-books__book-container
+                                    .arturs-books__book(data-number = i)
+                                        .arturs-books__logo
+                                        .arturs-books__number
+                                            input(type='text' data-number =i)
+                    .arturs-books__container--no-border
+                        .arturs-books__shelf
+                            each i in [1,2,3,4,5,6,7,8,9,10]
+                                .arturs-books__number-container
+                                    .arturs-books__slot-number #{i}
+                    .arturs-books__score
+                        span Your personal record:&nbsp;
+                        span.arturs-books__score-value 0
+                        span &nbsp;Days
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default modal-button', data-id='6', data-toggle='modal', data-target='#possible_modal') It's impossible to do better
+                button(type='button', class='solve', class='btn btn-default', data-id='6' ) Solve
+                button(type='button', class='reset', data-id='6', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+block append scripts
+    script(src='/javascripts/quiz/arthurs-books.js')
+    script(src='/javascripts/quiz/arthurs-books-solver.js')

@@ -1,0 +1,103 @@
+extends ../layout.pug
+
+block pagetitle
+    title Splitting weights
+
+block title
+    div(class='container')
+        h1 Splitting weights
+        p(class='subtitle text-center') You can change signs before the numbers by clicking them. The goal: get zero sum.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded')
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 1
+                
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 2
+
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 3
+
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 4
+
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 5
+
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 7
+
+                span =
+                span(class='padded', id='result') 22
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='0') It's impossible
+                button(type='button', class='reset', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 1
+                
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 2
+
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 3
+
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 4
+                
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 5
+                
+                label.sign
+                    input(type='checkbox', class='padded glyphicon', checked)
+                    span
+                span(class='padded') 6
+                span =
+                span(class='padded', id='result') 21
+    
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='1') It's impossible
+                button(type='button', class='reset', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+block append scripts
+    script(src='/javascripts/quiz/split-weights.js')

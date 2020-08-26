@@ -1,0 +1,60 @@
+extends ../layout.pug
+
+block pagetitle
+    title Road repair
+
+block title
+    div(class='container')
+        h1 Road repair
+        p(class='subtitle text-center') The Hurricane Barbara destroyed all the roads in the country. Our goal is to restore some of the roads such that every pair of cities is connected. (The route between two cities may go through other cities as well). Each road has its repair cost, find the cheapest way to connect all the cities.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded')
+                svg(id='graph1', class='fixed', width='100%', height='100%')
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='1') It's impossible
+                button(type='button', class='btn btn-info check', data-id='1') Check
+                button(type='button', class='btn btn-info reset', data-id='1') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                svg(id='graph2', class='fixed', width='100%', height='100%')
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='2') It's impossible
+                button(type='button', class='btn btn-info check', data-id='2') Check
+                button(type='button', class='btn btn-info reset', data-id='2') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded')
+                svg(id='graph3', class='fixed', width='100%', height='100%')
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='3') It's impossible
+                button(type='button', class='btn btn-info check', data-id='3') Check
+                button(type='button', class='btn btn-info reset', data-id='3') Reset
+
+    div(class='modal fade road-repair__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, a better solution exists.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/road-repair.js')

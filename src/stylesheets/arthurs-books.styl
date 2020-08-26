@@ -1,0 +1,88 @@
+$books-count = 10;
+$books-container-width = 100% / $books-count;
+
+.arturs-books__container
+    max-width 900px
+    margin-left auto
+    margin-right auto
+    min-width 300px
+    position relative
+    &:before
+        content ''
+        position absolute
+        top 50%
+        bottom -3px
+        left -5px
+        right 0
+        border 3px solid black
+        border-top none
+        display inline-block
+
+.arturs-books__container--no-border
+    @extend .arturs-books__container
+    &:before
+        display none
+
+.arturs-books__number-container
+    width $books-container-width
+    display inline-block
+    position relative
+
+.arturs-books__book-container
+    width $books-container-width
+    display inline-block
+    position relative
+    padding-top 40%
+
+.arturs-books__display, .arturs-books__steps, .arturs-books__rule
+    font-size 15px
+    font-size 4vmin
+    padding-bottom 1vmin
+
+.arturs-books__book
+    cursor pointer
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    margin-right 5px
+    border 3px solid black
+    height 100%
+    background bisque
+    transition all .5s
+    &.active
+        background green
+    &:before
+        content ''
+        height 5%
+        display block
+        border 2px solid black
+        border .5vmin solid black
+        border-left 0
+        border-right 0
+        margin-top 10px
+
+.arturs-books__slot-number
+    position relative
+    font-size 15px
+    font-size 5vmin
+.arturs-books__logo
+    height 60%
+
+.arturs-books__number
+    font-size 20px
+    font-size 5vmin
+    color #9f8200
+    input[type='text']
+        text-align center
+        background transparent
+        margin 5%
+        border 2px solid black
+        border .5vmin solid #9f8200
+        width 90%
+        &:disabled
+            border-color transparent
+
+.arturs-books__score
+    color #aaaaaa

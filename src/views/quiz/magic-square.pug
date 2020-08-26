@@ -1,0 +1,55 @@
+extends ../layout.pug
+
+block pagetitle
+    title Magic Square
+
+block title
+    div(class='container')
+        h1 Magic Square
+        p(class='subtitle text-center')
+
+block container
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level0')
+            div(class='center text-center padded')
+                .magic-square-content
+                    each _ in [1, 2, 3]
+                        .tr
+                            .td
+                                .magic-square-container
+                                    .magic-square-text
+                                        input.output-left(type='text', disabled='')
+                            each _ in [1, 2, 3]
+                                .td
+                                    .magic-square-container
+                                        .magic-square-text
+                                            input.field(type='text')
+                            .td
+                                .magic-square-container
+                                    .magic-square-text
+                                        input.output-right(type='text', disabled='')
+                    .tr
+                        .td
+                            .magic-square-container
+                                .magic-square-text
+                                    input.output-bottom-diagonal(type='text', disabled='')
+                        each _ in [1, 2, 3]
+                            .td
+                                .magic-square-container
+                                    .magic-square-text
+                                        input.output-bottom(type='text', disabled='')
+                        .td
+                            .magic-square-container
+                                .magic-square-text
+                                    input.output-bottom-diagonal-main(type='text', disabled='')
+
+            p(class='center text-center')
+                button(type='button', id='possible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+
+block append scripts
+    script(src='/javascripts/quiz/magic-square.js')

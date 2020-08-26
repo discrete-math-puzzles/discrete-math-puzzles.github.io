@@ -1,0 +1,54 @@
+extends ../layout.pug
+
+block pagetitle
+    title Local Maximum
+
+block title
+    div(class='container')
+        h1 Local Maximum
+        p(class='subtitle text-center') Given a sequence of n integers, find a local maximum by revealing at most m of them. An element is called a local maximum if it is not smaller than all its neighbors.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') n=4, m=3
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') n=8, m=5
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') n=16, m=7
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            svg(id='local-maximum-1', class='localMaximum', width='100%', height='25')
+            p(class='center text-center')
+                button(class='btn btn-info reset', data-id='1') Reset
+            p(class='center text-center')
+                span Number of requests remaining:&nbsp;
+                span(id='probesNum-1') 3
+            p(class='center text-center')
+                span(id='hint')
+        
+        div(role='tabpanel', class='tab-pane', id='level2')
+            svg(id='local-maximum-2', class='localMaximum', width='100%', height='25')
+            p(class='center text-center')
+                button(class='btn btn-info reset', data-id='2') Reset
+            p(class='center text-center')
+                span Number of requests remaining:&nbsp;
+                span(id='probesNum-2') 5
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            svg(id='local-maximum-3', class='localMaximum', width='100%', height='25')
+            p(class='center text-center')
+                button(class='btn btn-info reset', data-id='3') Reset
+            p(class='center text-center')
+                span Number of requests remaining:&nbsp;
+                span(id='probesNum-3') 7
+            p(class='center text-center')
+                span(id='hint')
+
+block prepend scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/local-maximum.js')

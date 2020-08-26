@@ -1,0 +1,70 @@
+extends ../layout.pug
+
+block pagetitle
+    title 15-game
+
+block title
+    div(class='container')
+        h1 15-game
+        p(class='subtitle text-center') A click on a green square moves it to the neighboring empty cell. Use such clicks to order 15 numbers in the increasing order: 1 2 3 4 (first row), 5 6 7 8 (second row), 9, 10, 11, 12 (third row), 13, 14, 15, empty (fourth row).
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Game 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Game 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Game 3
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab') Game 4
+        li(role='presentation')
+            a(href data-target='#level5' role='tab' data-toggle='tab') Game 5
+        li(role='presentation')
+            a(href data-target='#level6' role='tab' data-toggle='tab') Game 6
+
+    div(class='tab-content game15')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="1", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="1", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="2", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="2", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="3", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="3", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level4')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="4", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="4", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level5')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="5", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="5", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level6')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="6", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="6", class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/15-game.js')

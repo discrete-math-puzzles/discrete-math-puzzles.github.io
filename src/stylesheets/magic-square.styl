@@ -1,0 +1,51 @@
+.magic-square-container
+    width 100%
+    padding-top 100%
+    position relative
+
+    input[type='text']
+        border 0
+        font-size: 50px
+        line-height: 100px
+        text-align center
+
+.magic-square-text
+    position absolute
+    top 0px
+    left 0px
+    bottom -1px
+    right -1px
+    .field
+        outline none
+        background beige
+        border 1px solid black
+        border-right-width 0
+    .output-right
+        border-left 1px solid black
+    input
+        width 100%
+        height 100%
+        border 0
+        font-size: 50px
+        line-height: 100px
+        text-align center
+        &:disabled
+            background #5bc0de
+            color white
+        &.output-left
+            &:disabled
+                background white
+                color white
+
+.magic-square-text .output-bottom-diagonal:disabled,
+.magic-square-text .output-bottom-diagonal-main:disabled
+    background #a4e441
+    color white
+
+.magic-square-content
+    margin auto
+    max-width 500px
+
+.td
+    display inline-block
+    width 20%

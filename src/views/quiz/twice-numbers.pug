@@ -1,0 +1,39 @@
+extends ../layout.pug
+
+block pagetitle
+    title Numbers in 1…50 with no n and 2n
+
+block title
+    div(class='container')
+        h1 Numbers in 1…50 with no n and 2n
+        p(class='subtitle text-center') Maximal number of integers among 1..50 that can be selected if we are not allowed to select n and 2n at at same time
+
+block container
+    div(class='center text-center padded m50')
+        - var n = 0;
+        ul(class='numbers')
+            while n < 50
+                li(class='numbers__item', data-id=++n)= n
+
+        p(class='center text-center')
+            span Best try: 
+            span(class='path-best') –
+
+        p(class='center text-center')
+            span Current number: 
+            span(class='path') 0
+            
+        p(class='center text-center')
+            button(type='button', class='reset', class='btn btn-info') Reset
+
+    div(class='modal fade', id='improve_modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, a better solution exists.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/twice-numbers.js')

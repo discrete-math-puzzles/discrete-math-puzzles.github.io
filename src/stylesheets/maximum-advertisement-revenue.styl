@@ -1,0 +1,73 @@
+.maximum-advertisement-revenue
+    .legend
+        margin-top: 20px;
+
+    .result
+        margin-top: 20px;
+        line-height: 1;
+
+    .advertisers
+        display: inline-block;
+
+        .advertise
+            width: 70px;
+            height: 70px;
+            background: #ffa500;
+            display: inline-block;
+            padding: 14px;
+            margin: -1px;
+
+            transition: background .3s ease;
+
+            &.ui-draggable-disabled
+                background: #fbe9c9;
+
+            &.correct
+                background: #ffa500 !important;
+
+        .slot
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border: 1px dashed #ffa500;
+            margin: 5px 4px 3px;
+
+            &.ui-draggable-disabled, &.empty
+                border: 1px solid #ffa500;
+
+    .slots
+        display: inline-block;
+        vertical-align: top;
+
+        .wrap-slot
+            width: 70px;
+            height: 70px;
+            display: inline-block;
+            margin: 5px 4px 3px;
+            
+            div
+                margin-top: 5px;
+   
+        .slot
+            width: 70px;
+            height: 70px;
+            border: 1px dashed #ffa500;
+
+            &.ui-draggable-disabled, &.empty
+                border: 1px solid #ffa500;
+
+@media (min-width: 768px)
+    .maximum-advertisement-revenue
+        .advertisers
+            .slot
+                margin: 2px 4px;
+
+        .slots
+            .wrap-slot
+                margin: 2px 4px;
+
+@media (min-width: 992px)
+    .maximum-advertisement-revenue
+        .advertisers
+            padding: 0 30px;
+    

@@ -1,0 +1,29 @@
+.game15
+  .content
+    table
+      margin: 50px auto;
+      border: 1px solid #aaa;
+      padding: 10px;
+      display: inline-block;
+      background: #eee;
+      
+      td
+        background: #5bc0de;
+        margin: 7px;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 6px;
+        transition: .2s all ease; 
+
+        &.blank
+          background: transparent;
+          border: 1px solid #5bc0de;
+
+        &.clickable
+          background: #5cb85c;
+          cursor: pointer;

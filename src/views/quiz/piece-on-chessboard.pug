@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block pagetitle
+    title Piece on a Chessboard
+
+block title
+    div(class='container')
+        h1 Piece on a Chessboard
+        p(class='subtitle text-center') A piece on a chessboard can move to any cell adjacent by edge to the current one. Can it return to the original position after N moves?
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level0' role='tab' data-toggle='tab') Level 1: N=17
+        li(role='presentation')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 2: N=18
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level0')
+            div(class='center text-center padded')
+                svg(id='pieceOnChessboard0', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='possible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level1')
+            div(class='center text-center padded')
+                svg(id='pieceOnChessboard1', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='2', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/piece-on-chessboard.js')

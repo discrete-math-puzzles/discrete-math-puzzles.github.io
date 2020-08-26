@@ -1,0 +1,62 @@
+extends ../layout.pug
+
+block pagetitle
+    title Sums of Binomial Coefficients
+
+mixin tabpanel-summing-up-digits(level, possible, digits, text)
+    div(role='tabpanel', class='tab-pane ' + (level == 1 ? 'active' : ''), id='level' + level)
+        div(class='center text-center padded')
+            div(style='padding: 20px')
+                each j in text
+                    span(style='padding: 5px') #{j}
+            each i in digits
+                span.summing-up-digits-nowrap
+                    label.sign
+                        input(type='checkbox', class='padded glyphicon', data-value=i, checked=i % 2 ? 'checked' : undefined)
+                        span
+                    span(class='padded') #{Math.abs(i)}
+
+            span #{'='}
+            span(class='padded', id='result') 5
+
+        p(class='center text-center')
+            button(
+                type='button',
+                id=possible ? 'possible' : 'impossible',
+                data-id=level - 1,
+                class='btn btn-default',
+                data-toggle='modal',
+                data-target=possible ? '#possible_modal' : '#congratulations_modal'
+            ) It's impossible
+            button(type='button', class='reset', data-id=level, class='btn btn-info') Reset
+
+        p(class='center text-center')
+            span(id='hint')
+
+block title
+    div(class='container')
+        h1 Sums of Binomial Coefficients
+        p(class='subtitle text-center') Place signs in the expression $\pm \binom{n}{0} \pm \binom{n}{1} \pm \dotsb \pm \binom{n}{n-1} \pm \binom{n}{n}$ to get as a result the sum s.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation' class='active')
+            a(href, data-target='#level1', role='tab', data-toggle='tab') Level 1: n=7, s=128
+        li(role='presentation')
+            a(href, data-target='#level2', role='tab', data-toggle='tab') Level 2: n=7, s=0
+        li(role='presentation')
+            a(href, data-target='#level3', role='tab', data-toggle='tab') Level 3: n=6, s=64
+        li(role='presentation')
+            a(href, data-target='#level4', role='tab', data-toggle='tab') Level 4: n=6, s=0
+
+    div(class='tab-content')
+        +tabpanel-summing-up-digits(1, true, [1,-7,-21,35,35,-21,7,-1], ['$\\binom{7}{0}=1$', '$\\binom{7}{1}=7$', '$\\binom{7}{2}=21$', '$\\binom{7}{3}=35$', '$\\binom{7}{4}=35$', '$\\binom{7}{5}=21$', '$\\binom{7}{6}=7$', '$\\binom{7}{7}=1$'])
+        +tabpanel-summing-up-digits(2, true, [1,-7,-21,35,35,-21,7,-1], ['$\\binom{7}{0}=1$', '$\\binom{7}{1}=7$', '$\\binom{7}{2}=21$', '$\\binom{7}{3}=35$', '$\\binom{7}{4}=35$', '$\\binom{7}{5}=21$', '$\\binom{7}{6}=7$', '$\\binom{7}{7}=1$'])
+        +tabpanel-summing-up-digits(3, true, [1,-6,15,-20,-15,6,1], ['$\\binom{6}{0}=1$', '$\\binom{6}{1}=6$', '$\\binom{6}{2}=15$', '$\\binom{6}{3}=20$', '$\\binom{6}{4}=15$', '$\\binom{6}{5}=6$', '$\\binom{6}{6}=1$'])
+        +tabpanel-summing-up-digits(4, true, [1,-6,15,-20,-15,6,1], ['$\\binom{6}{0}=1$', '$\\binom{6}{1}=6$', '$\\binom{6}{2}=15$', '$\\binom{6}{3}=20$', '$\\binom{6}{4}=15$', '$\\binom{6}{5}=6$', '$\\binom{6}{6}=1$'])
+
+
+
+
+block append scripts
+    script(src='/javascripts/quiz/summing-up-binomials.js')

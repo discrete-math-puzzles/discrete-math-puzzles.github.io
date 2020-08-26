@@ -1,0 +1,26 @@
+.numbers, .florins, .cut
+  padding: 0;
+  margin: 0 auto 50px;
+  width: 100%;
+  max-width: 550px;
+  list-style-type: none;
+  font-size: 24px;
+  line-height: 55px;
+
+  &__item
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover
+      color: #0056ff;
+
+    &.checked
+      color: #0056ff;
+      background: #eee;
+      border-radius: 60px;
+
+    &.faded
+      color: #ddd;

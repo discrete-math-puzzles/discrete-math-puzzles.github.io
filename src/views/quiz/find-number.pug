@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block pagetitle
+    title Find a number
+
+block title
+    div(class='container')
+        h1 Find a number
+        p(class='subtitle text-center') Find a perfect square that starts with 31415
+
+block container
+    div(id='number1')
+        div(class='center text-center padded m50')
+            div(class='numbers')
+                span(class='number-item')
+                    input(class='form-control numberField', placeholder='Type number here')
+            
+        p(class='center text-center')
+            button(type='button', id='impossible', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+            button(type='button', class='check', class='btn btn-info') Check
+            button(type='button', class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/find-number.js')

@@ -1,0 +1,58 @@
+extends ../layout.pug
+
+block pagetitle
+    title Subway Lines
+
+block title
+    div(class='container')
+        h1 Subway Lines
+        p(class='subtitle text-center level level1 active') You are planning a subway system where the subway lines should not cross. Can you connect each pair of the four given stations?
+        p(class='subtitle text-center level level2') You are planning a subway system where the subway lines should not cross. Can you connect each pair of the five given stations?
+        p(class='subtitle text-center level level3') You are planning a subway system where the subway lines should not cross. Can you connect each pair of the five given stations except for only one pair?
+
+
+block container
+
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab' data-id='1') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab' data-id='2') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab' data-id='3') Level 3
+
+    div(class='tab-content' id='subway-lines')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded subway-lines-container' style='max-width: 600px; margin: auto' id='subway0')
+                canvas
+                div(style='display: none')
+                    include ../../../public/images/subway-icon.svg
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default submit-subway-lines', data-id='1') Check
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane active', id='level2')
+            div(class='center text-center padded subway-lines-container' style='max-width: 600px; margin: auto' id='subway1')
+                canvas
+                div(style='display: none')
+                    include ../../../public/images/subway-icon.svg
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default impossible-button', data-id='2') It's impossible
+                button(type='button', class='btn btn-default submit-subway-lines', data-id='2') Check
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane active', id='level3')
+            div(class='center text-center padded subway-lines-container' style='max-width: 600px; margin: auto' id='subway2')
+                canvas
+                div(style='display: none')
+                    include ../../../public/images/subway-icon.svg
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='3', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default submit-subway-lines', data-id='3') Check
+                button(type='button', class='reset', data-id='3', class='btn btn-info') Reset
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.4/paper-core.min.js')
+    script(src='/javascripts/quiz/subway-lines.js')

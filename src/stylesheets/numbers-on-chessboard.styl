@@ -1,0 +1,65 @@
+$cellWidth = 100% / 8;
+$firstColor = peachpuff;
+$secondColor = sienna;
+
+.numbers-on-chessboard-container
+    *
+        margin 0
+    width 100%
+    padding-top 100%
+    position relative
+
+    input[type='text']
+        &.field
+            &.invalid
+                color: red
+        border 0
+        font-size: 32px;
+        line-height: 64px;
+        text-align center
+        width 100%
+        height 100%
+
+.numbers-on-chessboard-text
+    position absolute
+    top 0
+    left 0
+    bottom -1px
+    right -1px
+    .field
+        &.invalid
+            color: red
+        outline none
+        background $firstColor
+        color: black
+
+.numbers-on-chessboard-td:nth-child(2n)
+    .field
+        &.invalid
+            color: red
+        background $secondColor
+        color white
+
+.numbers-on-chessboard-tr
+    margin-bottom -3px
+.numbers-on-chessboard-tr:nth-child(2n)
+    .field
+        &.invalid
+            color: red
+        background $secondColor
+        color white
+
+    .numbers-on-chessboard-td:nth-child(2n)
+        .field
+            &.invalid
+                color: red
+            background $firstColor
+            color black
+
+.numbers-on-chessboard-content
+    margin auto
+    max-width 500px
+
+.numbers-on-chessboard-td
+    display inline-block
+    width $cellWidth

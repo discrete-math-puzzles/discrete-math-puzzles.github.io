@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+    head
+        title Quizzes
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='shortcut icon', href='/favicon.png', type='image/png')
+
+    body
+        div(class='jumbotron text-center')
+            h1 Interactive Puzzles
+            p These interactive puzzles will help you develop your problem solving skills. Try them before attempting to solve the coding challenges described in <a href="http://bit.ly/moocbookpuzzles">Learning Algorithms Through Programming and Puzzle Solving</a> textbook that powers our online specialization <a href="https://www.coursera.org/specializations/data-structures-algorithms">Data Structures and Algorithms</a> at Coursera and <a href="https://www.edx.org/micromasters/ucsandiegox-algorithms-and-data-structures">MicroMasters</a> at edX. Some of these puzzles will also help you to solve problems in our <a href="https://www.coursera.org/specializations/discrete-mathematics">Introduction to Discrete Mathematics for Computer Science Specialization</a> at Coursera.
+
+        div(class='container list')
+            ul(class='nav nav-pills')
+                li(role='presentation', class='active')
+                    a(href, data-target='#alphabet', role='tab', data-toggle='tab') Alphabet
+                li(role='presentation')
+                    a(href, data-target='#tags', role='tab', data-toggle='tab') Tags
+                li(class='clear-filter disabled')
+                    a(href='/app/list') Clear filter
+
+            div(class='tab-content')
+                div(role='tabpanel', class='tab-pane active', id='alphabet')
+                    ul(class='quizzes-list')
+                        each val in data.getRawData
+                            li
+                                a(href=('/app/quiz-' + val.id), class='title')= val.title
+                                each tag in val.tags
+                                    a(href=('#' + tag.title.replace(' ', '_')), data-target='#'+tag.title, class='label label-default', style='background-color: ' + tag.color)= tag.title
+
+                div(role='tabpanel', class='tab-pane', id='tags')
+                    ul(class='quizzes-list tags')
+                        each value, tag in data.getByTags
+                            li
+                                span(class='label label-default', style=('background-color: ' + value.color), id=tag)= tag
+
+                                each quiz in value.items
+                                    a(href=('/app/quiz-' + quiz.id), class='title')= quiz.title
+
+    block scripts
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        script(src='/javascripts/quiz/list.js')
+        script.
+            (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45519171 = new Ya.Metrika({ id:45519171, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+        noscript
+             div
+                img(src='https://mc.yandex.ru/watch/45519171', style='position:absolute; left:-9999px;')

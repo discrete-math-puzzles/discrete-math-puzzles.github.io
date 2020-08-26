@@ -1,0 +1,58 @@
+extends ../layout.pug
+
+block pagetitle
+    title Job assignment
+
+block title
+    div(class='container')
+        h1 Job assignment
+        p(class='subtitle text-center level level1 active') A school has four job openings, and there are four applicants for them. Is it possible to fill all the positions?
+        p(class='subtitle text-center level level2') Six friends are organizing a party. There are five tasks, each must be done by a single person. Is there a good assignment?
+        p(class='subtitle text-center level level3') Is it possible to assign each student to a room he likes, such that everyone gets his own room?
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3
+
+    div(class='tab-content job-assignment')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="1", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="1", class='check', class='btn btn-info') Check
+                button(type='button', data-id="1", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="2", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="2", class='check', class='btn btn-info') Check
+                button(type='button', data-id="2", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="3", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="3", class='check', class='btn btn-info') Check
+                button(type='button', data-id="3", class='reset', class='btn btn-info') Reset
+
+
+    div(class='modal fade job-assignment__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, a better solution exists.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/job-assignment.js')

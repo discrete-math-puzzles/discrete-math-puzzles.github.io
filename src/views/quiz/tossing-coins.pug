@@ -1,0 +1,84 @@
+extends ../layout.pug
+
+block pagetitle
+    title Tossing coins and defining events
+
+mixin button(text)
+    button.btn.btn-default.tossing-coins__button= text
+
+mixin buttons-block
+    +button('HHH')
+    +button('HHT')
+    +button('HTH')
+    +button('HTT')
+    +button('THH')
+    +button('THT')
+    +button('TTH')
+    +button('TTT')
+
+block title
+    div(class='container')
+        h1 Tossing coins and defining events
+        p(class='subtitle text-center') Tossing a coin three times, we have 8 equiprobable outcomes (H for head, T for tail): HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. For each event, select the outcomes that belong to this event.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab') Level 4
+        li(role='presentation')
+            a(href data-target='#level5' role='tab' data-toggle='tab') Level 5
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            p(class='padded text-center tossing-coins__desc') At least two heads
+            div(class='text-center')
+                +buttons-block
+            div(class='padded text-center tossing-coins__probability-text')
+
+            p(class='text-center')
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            p(class='padded text-center tossing-coins__desc') Not all heads
+            div(class='text-center')
+                +buttons-block
+            div(class='padded text-center tossing-coins__probability-text')
+
+            p(class='text-center')
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            p(class='padded text-center tossing-coins__desc') Equal number of heads and tails
+            div(class='text-center')
+                +buttons-block
+            div(class='padded text-center tossing-coins__probability-text')
+
+            p(class='text-center')
+                button(type='button', class='reset', data-id='3', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level4')
+            p(class='padded text-center tossing-coins__desc') Even number of tails
+            div(class='text-center')
+                +buttons-block
+            div(class='padded text-center tossing-coins__probability-text')
+
+            p(class='text-center')
+                button(type='button', class='reset', data-id='4', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level5')
+            p(class='padded text-center tossing-coins__desc') All tails
+            div(class='text-center')
+                +buttons-block
+            div(class='padded text-center tossing-coins__probability-text')
+
+            p(class='text-center')
+                button(type='button', class='reset', data-id='5', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/tossing-coins.js')

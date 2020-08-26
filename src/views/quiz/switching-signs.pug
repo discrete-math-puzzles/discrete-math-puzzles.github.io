@@ -1,0 +1,109 @@
+extends ../layout.pug
+
+block pagetitle
+    title Switching Signs
+
+block title
+    div(class='container')
+        h1 Switching Signs
+        p(class='subtitle text-center') We are given a 4 x 4 table as on the picture. On one step we are allowed to switch all signs in some column or some row. Can we switch all signs to '+'?
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level0' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 2
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 3
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 4
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab') Level 5
+        li(role='presentation')
+            a(href data-target='#level5' role='tab' data-toggle='tab') Level 6
+        li(role='presentation')
+            a(href data-target='#level6' role='tab' data-toggle='tab') Level 7
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level0')
+            div(class='center text-center padded')
+                svg(id='switchingSigns0', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='possible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level1')
+            div(class='center text-center padded')
+                svg(id='switchingSigns1', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='possible', class='btn btn-default', data-id='2', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                svg(id='switchingSigns2', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='3', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', data-id='3', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded')
+                svg(id='switchingSigns3', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='possible', class='btn btn-default', data-id='4', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='4', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level4')
+            div(class='center text-center padded')
+                svg(id='switchingSigns4', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='5', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', data-id='5', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level5')
+            div(class='center text-center padded')
+                svg(id='switchingSigns5', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='possible', class='btn btn-default', data-id='6', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='6', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane', id='level6')
+            div(class='center text-center padded')
+                svg(id='switchingSigns6', class="fixed")
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='7', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', data-id='7', class='btn btn-info') Reset
+
+            p(class='center text-center')
+                span(id='hint')
+
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/switching-signs.js')

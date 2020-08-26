@@ -1,0 +1,139 @@
+extends ../layout.pug
+
+block pagetitle
+    title Take the last rock
+
+block title
+    div(class='container')
+        h1 Take the last rock
+        p(class='subtitle text-center') There is a pile of N rocks. Two players take rocks from the pile in turns. In each turn a player can either take one or two rocks from the pile. The player that takes the last rock wins the game. You move first.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 2
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 3
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3: N = 4
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab') Level 4: N = 5
+        li(role='presentation')
+            a(href data-target='#level5' role='tab' data-toggle='tab') Level 5: N = 6
+        li(role='presentation')
+            a(href data-target='#level6' role='tab' data-toggle='tab') Level 6: N = 7
+        li(role='presentation')
+            a(href data-target='#level7' role='tab' data-toggle='tab') Level 7: N = 11
+
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2,3]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2,3,4]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level4')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2,3,4,5]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level5')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2,3,4,5,6]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level6')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2,3,4,5,6,7]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+
+        div(role='tabpanel', class='tab-pane', id='level7')
+            div(class='take-the-last-rock')
+                div(class='row')
+                    div(class='col-md-offset-2 col-md-4 history')
+                    div(class='col-md-4 pile')
+                        each i in [1,2,3,4,5,6,7,8,9,10,11]
+                            .rock
+
+            p(class='center text-center')
+                button(class='btn btn-info one-rock-pile') Take one rock
+                button(class='btn btn-info two-rocks-pile') Take two rocks
+                button(class='btn btn-info computer-pile') Your opponent can always win
+                button(class='btn btn-default reset') Reset
+
+    div(class='modal fade take-the-last-rock__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, it is you who can always win.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/take-the-last-rock.js')

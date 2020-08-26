@@ -1,0 +1,95 @@
+extends ../layout.pug
+
+block pagetitle
+    title Maximum Advertisement Revenue
+
+block title
+    div(class='container')
+        h1 Maximum Advertisement Revenue
+        p(class='subtitle text-center') You have a few advertisement slots on your popular Internet page and you want to sell them to advertisers. For each of them, you estimated the expected number of clicks per day. You found advertisers, each of them is willing to pay a fixed amount per click. How would you pair the slots and advertisers?
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') N = 2
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') N = 3
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') N = 4
+
+    div(class='tab-content maximum-advertisement-revenue')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded content')
+                div(class='row')
+                    div(class='col-md-12')
+                        div(class='legend') Advertisers:
+                        div(class='advertisers')
+                            each val,i in [2, 3]
+                                div(class='slot', data-item=0)
+                                    div(class='advertise', data-item=i) $#{val} per click
+
+                    div(class='col-md-12')
+                        div(class='legend') Slots:
+                        div(class='slots')
+                            each val,i in [7, 5]
+                                div(class='wrap-slot')
+                                    div(class='slot', data-item=i + 1)
+                                    div #{val} clicks per day
+
+                    div(class='col-md-12')
+                        div(class='result') Revenue: <span class='revenue'>0</span>
+
+            p(class='center text-center')
+                button(type='button', data-id="1", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded content')
+                div(class='row')
+                    div(class='col-md-12')
+                        div(class='legend') Advertisers:
+                        div(class='advertisers')
+                            each val,i in [5, 3, 2]
+                                div(class='slot', data-item=0)
+                                    div(class='advertise', data-item=i) $#{val} per click
+
+                    div(class='col-md-12')
+                        div(class='legend') Slots:
+                        div(class='slots')
+                            each val,i in [20, 10, 30]
+                                div(class='wrap-slot')
+                                    div(class='slot', data-item=i + 1)
+                                    div #{val} clicks per day
+
+                    div(class='col-md-12')
+                        div(class='result') Revenue: <span class='revenue'>0</span>
+
+            p(class='center text-center')
+                button(type='button', data-id="2", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded content')
+                div(class='row')
+                    div(class='col-md-12')
+                        div(class='legend') Advertisers:
+                        div(class='advertisers')
+                            each val,i in [7, 5, 2, 6]
+                                div(class='slot', data-item=0)
+                                    div(class='advertise', data-item=i) $#{val} per click
+
+                    div(class='col-md-12')
+                        div(class='legend') Slots:
+                        div(class='slots')
+                            each val,i in [17, 6, 23, 15]
+                                div(class='wrap-slot')
+                                    div(class='slot', data-item=i + 1)
+                                    div #{val} clicks per day
+
+                    div(class='col-md-12')
+                        div(class='result') Revenue: <span class='revenue'>0</span>
+
+            p(class='center text-center')
+                button(type='button', data-id="3", class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='http://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
+    script(src='/javascripts/quiz/maximum-advertisement-revenue.js')

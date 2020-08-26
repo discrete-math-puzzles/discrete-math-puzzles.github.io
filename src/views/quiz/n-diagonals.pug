@@ -1,0 +1,55 @@
+extends ../layout.pug
+
+block pagetitle
+    title N Diagonals
+
+block title
+    div(class='container')
+        h1 N Diagonals
+        p(class='subtitle text-center') By clicking on squares, draw N diagonals that do not touch each other.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 6
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 10
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3: N = 16
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded')
+                svg(id='mySvg1', class='borderred', width='100%', height='100%')
+
+            p(align='center') Number of diagonals: 
+                span(id='diagnum3') 0
+            
+            p(class='center text-center')
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                svg(id='mySvg2', class='borderred', width='100%', height='100%')
+
+            p(align='center') Number of diagonals: 
+                span(id='diagnum4') 0
+            
+            p(class='center text-center')
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded')
+                svg(id='mySvg3', class='borderred', width='100%', height='100%')
+
+            p(align='center') Number of diagonals: 
+                span(id='diagnum5') 0
+            
+            p(class='center text-center')
+                button(type='button', class='reset', data-id='3', class='btn btn-info') Reset
+
+block prepend scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/n-diagonals.js')
+    

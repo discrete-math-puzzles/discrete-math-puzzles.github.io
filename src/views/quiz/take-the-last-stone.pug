@@ -1,0 +1,38 @@
+extends ../layout.pug
+
+block pagetitle
+    title Two Rocks Game
+
+block title
+    div(class='container')
+        h1 Two Rocks Game
+        p(class='subtitle text-center') There are two piles of ten rocks. In each turn, you may either take one rock from a single pile, or one rock from both piles. The player that takes the last rock wins the game. Your opponent moves first.
+
+block container
+    div(class='take-the-last-stone')
+        div(class='row')
+            div(class='col-sm-4 history')
+            div(class='col-sm-4 pile left-pile')
+                each i in [1,2,3,4,5,6,7,8,9,10]
+                    .rock
+            div(class='col-sm-4 pile right-pile')
+                each i in [1,2,3,4,5,6,7,8,9,10]
+                    .rock
+
+    p(class='center text-center')
+        button(class='btn btn-info left-pile') Take one rock from the left pile
+        button(class='btn btn-info right-pile') Take one rock from the right pile
+        button(class='btn btn-info both-pile') Take one rock from both piles
+        button(class='btn btn-default reset') Reset
+
+    div(class='modal fade take-the-last-stone__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, a better solution exists.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/take-the-last-stone.js')

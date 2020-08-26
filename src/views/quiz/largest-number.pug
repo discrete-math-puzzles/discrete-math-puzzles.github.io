@@ -1,0 +1,50 @@
+extends ../layout.pug
+
+block pagetitle
+    title Largest Concatenate Problem
+
+block title
+    div(class='container')
+        h1 Largest Concatenate Problem
+        p(class='subtitle text-center') Compile the largest number by concatenating the given numbers.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab') Level 4
+
+    div(class='tab-content largest-number')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="1", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="2", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="3", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level4')
+            div(class='center text-center padded content')
+
+            p(class='center text-center')
+                button(type='button', data-id="4", class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='//code.jquery.com/ui/1.12.1/jquery-ui.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js')
+    script(src='/javascripts/quiz/largest-number.js')

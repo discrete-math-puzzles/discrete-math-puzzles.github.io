@@ -1,0 +1,31 @@
+extends ../layout.pug
+
+block pagetitle
+    title Florin coins
+
+block title
+    div(class='container')
+        h1 Florin coins
+        p(class='subtitle text-center') Person A has an unlimited number of 7-florin coins, person B has an unlimited number of 13-florin coins. How A can pay 5 florins to B?
+
+block container
+    div(id='number1')
+        div(class='center text-center padded m50')
+            div(class='florins row')
+                span(class='florin__man florin__man-first col-md-5')
+                    img(src="man1.png")
+                    input(class='form-control numberField', placeholder='7-florin coins')
+                span(class='florin__man florin__arrow col-md-2')
+                    img(src="man-arrow.png")
+                span(class='florin__man florin__man-second col-md-5')
+                    img(src="man2.jpg")
+                    input(class='form-control numberField', placeholder='13-florin coins')
+
+            p(class='center text-center result') Paid: 0 florins
+
+        p(class='center text-center')
+            button(type='button', id='impossible', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+            button(type='button', class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/florin-coins.js')

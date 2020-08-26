@@ -1,0 +1,33 @@
+.padded
+  padding: 20px;
+
+.tab-pane
+  user-select: none
+
+.tab-pane.padded
+  margin: 50px;
+
+.sign span
+  position: absolute;
+  margin: 0 auto auto -10px;
+
+.sign span:before
+  content: '\2212';
+  margin: -2px -7px -7px -7px;
+  position: absolute;
+  background: #eee;
+  border-radius: 60px;
+  text-align: center;
+  line-height: 13px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 9;
+  display: block;
+  width: 25px;
+  height: 25px;
+
+.sign :checked + span:before
+  content: '\002b';
+
+.btn
+  margin: 10px;

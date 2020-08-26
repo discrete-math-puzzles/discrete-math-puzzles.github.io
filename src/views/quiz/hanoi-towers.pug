@@ -1,0 +1,59 @@
+extends ../layout.pug
+
+block pagetitle
+    title Hanoi towers
+
+block title
+    div(class='container')
+        h1 Hanoi towers
+        p(class='subtitle text-center') Place blocks in the same order to another tower.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 2
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 3
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3: N = 4
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active padded', id='level1')
+            div(class='center text-center padded')
+                div#tower1
+                    ul.tower
+                    ul.tower
+                    ul.tower
+
+            p(class='center text-center')
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane padded', id='level2')
+            div(class='center text-center padded')
+                div#tower2
+                    ul.tower
+                    ul.tower
+                    ul.tower
+
+            p(class='center text-center')
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+        div(role='tabpanel', class='tab-pane padded', id='level3')
+
+            div(class='center text-center padded')
+               div#tower3
+                    ul.tower
+                    ul.tower
+                    ul.tower
+
+            p(class='center text-center')
+                button(type='button', class='reset', data-id='3', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+block append scripts
+    script(src='/javascripts/quiz/hanoi-towers.js')

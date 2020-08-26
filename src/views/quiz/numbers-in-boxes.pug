@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block pagetitle
+    title Numbers in Boxes
+
+block title
+    div(class='container')
+        h1 Numbers in Boxes
+        p(class='subtitle text-center') There is a sequence of 10 cells, the leftmost cell contains 1 and the rightmost cell contains 30. Is it possible to fill other cells with numbers in such a way that consecutive numbers differ by at most 3?
+
+block container
+    div(class='center text-center padded m50')
+        div(class='container', id='chessboardCells')
+            div(class='row', id='chessboardCells')
+                div(class='cell col-md-1 col-md-offset-1')
+                    input(class='form-control', type='number', data-index=1)
+                each val in [2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    div(class='cell col-md-1')
+                        input(class='form-control', type='number', data-index=val)
+
+    p(class='center text-center')
+        button(type='button', class='btn btn-default impossible') It's impossible
+        button(type='button', class='reset', class='btn btn-info', data-id='1') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/numbers-in-boxes.js')

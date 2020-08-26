@@ -1,0 +1,169 @@
+extends ../layout.pug
+
+block pagetitle
+    title Car Fueling
+
+block title
+    div(class='container')
+        h1 Car Fueling
+        p(class='subtitle text-center') A car can travel at most 3 miles on a full tank. You want to make as few refills as possible while getting from A to B. Select gas stations where you would like to refill and press "Start journey" button.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') n = 6
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') n = 7
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') n = 7
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab') n = 12
+        li(role='presentation')
+            a(href data-target='#level5' role='tab' data-toggle='tab') n = 12
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded')
+                div(class='tank')
+                    div(class='inner')
+
+            div(class='center text-center padded')
+                div(class='petrolstation')
+                    each i in [0,1,2,3,4,5,6]
+                        if i === 2 || i === 3 || i === 4
+                            div(class='station')
+                                img(src="gasoline-pump.png", data-id=i)
+                        else
+                            div(class='station')
+
+                div(class='road')
+                    each i in [0,1,2,3,4,5,6]
+                        div(class='delimeter') #{i}
+
+                img(class='car', src="automobile.png")
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='1') It's impossible
+                button(type='button', class='btn btn-info check', data-id='1') Start the journey
+                button(type='button', class='btn btn-info reset', data-id='1') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                div(class='tank')
+                    div(class='inner')
+
+            div(class='center text-center padded')
+                div(class='petrolstation')
+                    each i in [0,1,2,3,4,5,6,7]
+                        if i === 1 || i === 2 || i === 3 || i === 4 || i === 5 || i === 6
+                            div(class='station')
+                                img(src="gasoline-pump.png", data-id=i)
+                        else
+                            div(class='station')
+
+                div(class='road')
+                    each i in [0,1,2,3,4,5,6,7]
+                        div(class='delimeter') #{i}
+
+                img(class='car', src="automobile.png")
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='2') It's impossible
+                button(type='button', class='btn btn-info check', data-id='2') Start the journey
+                button(type='button', class='btn btn-info reset', data-id='2') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded')
+                div(class='tank')
+                    div(class='inner')
+
+            div(class='center text-center padded')
+                div(class='petrolstation')
+                    each i in [0,1,2,3,4,5,6,7]
+                        if i === 1 || i === 2 || i === 6
+                            div(class='station')
+                                img(src="gasoline-pump.png", data-id=i)
+                        else
+                            div(class='station')
+
+                div(class='road')
+                    each i in [0,1,2,3,4,5,6,7]
+                        div(class='delimeter') #{i}
+
+                img(class='car', src="automobile.png")
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='3') It's impossible
+                button(type='button', class='btn btn-info check', data-id='3') Start the journey
+                button(type='button', class='btn btn-info reset', data-id='3') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level4')
+            div(class='center text-center padded')
+                div(class='tank')
+                    div(class='inner')
+
+            div(class='center text-center padded')
+                div(class='petrolstation')
+                    each i in [0,1,2,3,4,5,6,7,8,9,10,11,12]
+                        if i === 1 || i === 2 || i === 4 || i === 5 || i === 6 || i === 7 || i === 8 || i === 10 || i === 11
+                            div(class='station')
+                                img(src="gasoline-pump.png", data-id=i)
+                        else
+                            div(class='station')
+
+                div(class='road')
+                    each i in [0,1,2,3,4,5,6,7,8,9,10,11,12]
+                        div(class='delimeter') #{i}
+
+                img(class='car', src="automobile.png")
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='4') It's impossible
+                button(type='button', class='btn btn-info check', data-id='4') Start the journey
+                button(type='button', class='btn btn-info reset', data-id='4') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level5')
+            div(class='center text-center padded')
+                div(class='tank')
+                    div(class='inner')
+
+            div(class='center text-center padded')
+                div(class='petrolstation')
+                    each i in [0,1,2,3,4,5,6,7,8,9,10,11,12]
+                        if i === 1 || i === 2 || i === 4 || i === 5 || i === 8 || i === 9 || i === 10 || i === 11
+                            div(class='station')
+                                img(src="gasoline-pump.png", data-id=i)
+                        else
+                            div(class='station')
+
+                div(class='road')
+                    each i in [0,1,2,3,4,5,6,7,8,9,10,11,12]
+                        div(class='delimeter') #{i}
+
+                img(class='car', src="automobile.png")
+
+            p(class='center text-center')
+                button(type='button', class='btn btn-default impossible', data-id='5') It's impossible
+                button(type='button', class='btn btn-info check', data-id='5') Start the journey
+                button(type='button', class='btn btn-info reset', data-id='5') Reset
+
+    div(class='modal fade car-fueling__better__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body')
+                    h4 You've reached the destination but with too many refills.
+                    p Please try again.
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+    div(class='modal fade car-fueling__stopped__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body')
+                    h4 You ran out of fuel.
+                    p Please try again.
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/car-fueling.js')

@@ -1,0 +1,130 @@
+fz-narrow = 32px
+fz-medium = 48px
+fz-wide = 64px
+
+.antimagic-square
+    padding-right 20%
+    padding-bottom 20%
+    padding-left 20%
+
+.antimagic-square__table
+    font-size fz-narrow
+    line-height fz-narrow
+    display table
+    width 100%
+    max-width 600px
+    margin 0 auto
+    border-collapse collapse
+
+    @media only screen and (min-width: 480px)
+        font-size fz-medium
+        line-height fz-medium
+
+    @media only screen and (min-width: 640px)
+        font-size fz-wide
+        line-height fz-wide
+
+.antimagic-square__row
+    display table-row
+
+.antimagic-square__cell
+    display table-cell
+    text-align center
+    border 2px solid #000
+    cursor pointer
+
+.antimagic-square__strut
+    position relative
+    padding-bottom 100%
+    user-select none
+
+.antimagic-square__text
+    display block
+    position absolute
+    width 100%
+    height fz-narrow
+    margin-top -(@height / 2)
+    top 50%
+    left 0
+    pointer-events none
+
+    @media only screen and (min-width: 480px)
+        height fz-medium
+        margin-top -24px
+
+    @media only screen and (min-width: 640px)
+        height fz-wide
+        margin-top -32px
+
+
+.antimagic-square__sum
+    width 100%
+    height fz-narrow
+    margin-top -(@height / 2)
+    position absolute
+    left 0
+    top 50%
+    pointer-events none
+
+    &_row
+        left 100%
+
+    &_col
+        width 100%
+        top 150%
+
+    &_dia0,
+    &_dia1
+        top 150%
+        left 100%
+
+    &_dia1
+        right 100%
+        left auto
+
+    @media only screen and (min-width: 480px)
+        height fz-medium
+        margin-top -24px
+
+    @media only screen and (min-width: 640px)
+        height fz-wide
+        margin-top -32px
+
+
+.antimagic-square_warn-row0
+    .antimagic-square__row:first-child
+        .antimagic-square__sum_row
+            color #d9534f
+
+.antimagic-square_warn-row1
+    .antimagic-square__row:nth-child(2)
+        .antimagic-square__sum_row
+            color #d9534f
+
+.antimagic-square_warn-row2
+    .antimagic-square__row:nth-child(3)
+        .antimagic-square__sum_row
+            color #d9534f
+
+.antimagic-square_warn-col0
+    .antimagic-square__cell:first-child
+        .antimagic-square__sum_col
+            color #d9534f
+
+.antimagic-square_warn-col1
+    .antimagic-square__cell:nth-child(2)
+        .antimagic-square__sum_col
+            color #d9534f
+
+.antimagic-square_warn-col2
+    .antimagic-square__cell:nth-child(3)
+        .antimagic-square__sum_col
+            color #d9534f
+
+.antimagic-square_warn-dia0
+    .antimagic-square__sum_dia0
+        color #d9534f
+
+.antimagic-square_warn-dia1
+    .antimagic-square__sum_dia1
+        color #d9534f

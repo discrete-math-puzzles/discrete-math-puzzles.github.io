@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block pagetitle
+    title Rooks
+
+block title
+    div(class='container')
+        h1 Rooks
+        p(class='subtitle text-center') Place the maximum number of rooks such that no two attack each other. Click on a cell to add or remove a rook.
+
+block container
+        div(class='center text-center padded')
+            svg(id='rook1', class='borderred', width='100%', height='100%')
+
+        p(class='center text-center')
+            button(type='button', id='impossible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#possible_modal') It's impossible
+            button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+            
+        p(class='center text-center')
+            span(id='hint')
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/n-rooks.js')

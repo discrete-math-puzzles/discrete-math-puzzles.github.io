@@ -1,0 +1,63 @@
+extends ../layout.pug
+
+block pagetitle
+    title Balls in Boxes
+
+block title
+    div(class='container')
+        h1 Balls in Boxes
+        p(class='subtitle text-center level level1 active') Distribute N black balls among 10 boxes so that every two boxes have different number of balls (you can put 0 balls in some box if you want to). Fill in numbers of black balls in each box below.
+        p(class='subtitle text-center level level2') Distribute N black balls among 10 boxes so that every two boxes have different number of balls (you can put 0 balls in some box if you want to). Fill in numbers of black balls in each box below.
+        p(class='subtitle text-center level level3') Distribute N black balls among 10 boxes so that every two boxes have different number of balls (you can put 0 balls in some box if you want to). Fill in numbers of black balls in each box below.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 60
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 45
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3: N = 30
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded m50')
+                div(class='balls', id='balls1')
+                    each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        span(class='ball')
+                            input(class='form-control')
+
+                span(class='result result1') 0
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-toggle='modal', data-id='1', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', class='btn btn-info', data-id='1') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded m50')
+                div(class='balls', id='balls2')
+                    each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        span(class='ball')
+                            input(class='form-control')
+
+                span(class='result result2') 0
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-toggle='modal', data-id='2', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', class='btn btn-info', data-id='2') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded m50')
+                div(class='balls', id='balls3')
+                    each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        span(class='ball')
+                            input(class='form-control')
+
+                span(class='result result3') 0
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-toggle='modal', data-id='3', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', class='btn btn-info', data-id='3') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/balls-in-boxes.js')

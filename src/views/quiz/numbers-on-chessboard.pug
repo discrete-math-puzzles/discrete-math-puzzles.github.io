@@ -1,0 +1,32 @@
+extends ../layout.pug
+
+block pagetitle
+    title Numbers on the Chessboard
+
+block title
+    div(class='container')
+        h1 Numbers on the Chessboard
+        p(class='subtitle text-center') Is it possible to put numbers 1,2,...,64 on the chessboard in such a way that neighbors (sharing a side) differ by at most 4?
+
+block container
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level0')
+            div(class='center text-center padded')
+                .numbers-on-chessboard-content
+                    each _ in [1, 2, 3, 4, 5, 6, 7, 8]
+                        .numbers-on-chessboard-tr
+                            each _ in [1, 2, 3, 4, 5, 6, 7, 8]
+                                .numbers-on-chessboard-td
+                                    .numbers-on-chessboard-container
+                                        .numbers-on-chessboard-text
+                                            input.field(type='text')
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+                
+            p(class='center text-center')
+                span(id='hint')
+
+block append scripts
+    script(src='/javascripts/quiz/numbers-on-chessboard.js')

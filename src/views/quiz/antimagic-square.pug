@@ -1,0 +1,35 @@
+extends ../layout.pug
+
+block pagetitle
+    title Antimagic Square
+
+block title
+    .container
+        h1 An (-1,0,1) Antimagic Square
+        p(class='subtitle text-center') Fill a 3x3 table by numbers -1, 0 and 1 so that the sum in each row, each column and each diagonal produces different numbers. Click on the cell to change the number there. Sums in rows, columns and diagonals will be shown
+
+block container
+    div(class='padded')
+        div(class='antimagic-square' data-antimagic-square)
+            div(class='antimagic-square__table')
+                each i in ['0', '1', '2']
+                    div(class='antimagic-square__row')
+                        each j in ['0', '1', '2']
+                            div(class='antimagic-square__cell' data-ij=i+j)
+                                div(class='antimagic-square__strut')
+                                    span(class='antimagic-square__text' data-text)
+                                    if i === '2'
+                                        span(class='antimagic-square__sum antimagic-square__sum_col' data-sum-col=j)
+                                    if j === '2'
+                                        span(class='antimagic-square__sum antimagic-square__sum_row' data-sum-row=i)
+                                    if i === '2' && j === '2'
+                                        span(class='antimagic-square__sum antimagic-square__sum_dia0' data-sum-dia='0')
+                                    if i === '2' && j === '0'
+                                        span(class='antimagic-square__sum antimagic-square__sum_dia1' data-sum-dia='1')
+
+    p(class='center text-center')
+        button(class='btn btn-default impossible') It's impossible
+        button(class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/antimagic-square.js')

@@ -1,0 +1,51 @@
+extends ../layout.pug
+
+block pagetitle
+    title Touch all segments
+
+block title
+    div(class='container')
+        h1 Touch all segments
+        p(class='subtitle text-center') Touch the given k segments with minimum number of vertical lines
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level0' role='tab' data-toggle='tab') Level 1 (k = 3)
+        each val,i in ['k = 7', 'k = 12']
+            li(role='presentation')
+                a(href data-target='#level' + (i + 1) role='tab' data-toggle='tab') Level #{i+2} (#{val})
+
+    div(class='tab-content touch-all-segments')
+        each val,i in ['k = 3', 'k = 7', 'k = 12']
+            div(role='tabpanel', class='tab-pane' + (i == 0 ? ' active' : ''), id='level' + i)
+                div(class='center text-center')
+                    .wrapper
+                        .lines
+                            each val,i in [13,12,11,10,9,8,7,6,5,4,3,2,1]
+                                .line-wrap(data-id=val)
+
+                        .dividers
+                            each i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+                                .divider(data-id=i)
+                                    .inner
+
+
+                p(class='center text-center')
+                    button(type='button', class='btn btn-default sortLength') Sort by length
+                    button(type='button', class='btn btn-default sortLeft') Sort by left end
+                    button(type='button', class='btn btn-default sortRight') Sort by right end
+                    button(type='button', class='btn btn-info reset') Reset
+
+
+    div(class='modal fade touch-all-segments__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 You’ve touched all segments, but a better solution exists in fact.
+                    p Please try again.
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/touch-all-segments.js')

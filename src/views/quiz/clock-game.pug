@@ -1,0 +1,78 @@
+extends ../layout.pug
+
+block pagetitle
+    title 21 Questions Game
+
+block title
+    div(class='container')
+        h1 21 questions game
+        p(class='subtitle text-center') Find an unknown integer 1 ≤ x ≤ N by asking k questions “Is x = y?” (for any 1 ≤ y ≤ N ). When you ask such a question, simply enter "y" instead of "Is x=y?" Your opponent will reply either “Yes”, or “x < y”, or “x > y.”
+
+block container
+    div(class='clock-game')
+        ul(class='nav nav-tabs', role='tablist')
+            li(role='presentation', class='active')
+                a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 3, k = 2
+            li(role='presentation')
+                a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 15, k = 4
+            li(role='presentation')
+                a(href data-target='#level3' role='tab' data-toggle='tab') Level 3: N = 127, k = 7
+            li(role='presentation')
+                a(href data-target='#level4' role='tab' data-toggle='tab') Level 4: N = 2097151, k = 21
+
+        div(class='tab-content')
+            div(role='tabpanel', class='tab-pane active', id='level1')
+                div(class='row content')
+                    div(class='col-md-offset-2 col-md-4 history')
+                        div(class='counter gray') There are 2 questions left.
+                        div(class='content gray') History is empty. Make your prediction.
+                    div(class='col-md-4 interactive-form')
+                        p(class='center text-center')
+                            input(type='text' class='form-control' data-number=1)
+                            button(class='btn btn-info ask') Ask
+                            button(class='btn btn-default reset') Reset
+
+            div(role='tabpanel', class='tab-pane', id='level2')
+                div(class='row content')
+                    div(class='col-md-offset-2 col-md-4 history')
+                        div(class='counter gray') There are 4 questions left.
+                        div(class='content gray') History is empty. Make your prediction.
+                    div(class='col-md-4 interactive-form')
+                        p(class='center text-center')
+                            input(type='text' class='form-control' data-number=2)
+                            button(class='btn btn-info ask') Ask
+                            button(class='btn btn-default reset') Reset
+
+            div(role='tabpanel', class='tab-pane', id='level3')
+                div(class='row content')
+                    div(class='col-md-offset-2 col-md-4 history')
+                        div(class='counter gray') There are 7 questions left.
+                        div(class='content gray') History is empty. Make your prediction.
+                    div(class='col-md-4 interactive-form')
+                        p(class='center text-center')
+                            input(type='text' class='form-control' data-number=3)
+                            button(class='btn btn-info ask') Ask
+                            button(class='btn btn-default reset') Reset
+                            
+            div(role='tabpanel', class='tab-pane', id='level4')
+                div(class='row content')
+                    div(class='col-md-offset-2 col-md-4 history')
+                        div(class='counter gray') There are 21 questions left.
+                        div(class='content gray') History is empty. Make your prediction.
+                    div(class='col-md-4 interactive-form')
+                        p(class='center text-center')
+                            input(type='text' class='form-control' data-number=4)
+                            button(class='btn btn-info ask') Ask
+                            button(class='btn btn-default reset') Reset
+
+    div(class='modal fade clock-game__modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, a better solution exists.
+                    p Would you like to improve your result?
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/clock-game.js')

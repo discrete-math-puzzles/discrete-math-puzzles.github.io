@@ -1,0 +1,54 @@
+.arrange-apples
+    .targets
+        display: inline-block;
+
+        .row:nth-child(2n+1) .target
+            background: #fafafa
+
+        .target
+            width: 25px;
+            height: 25px;
+            border: 1px solid #ffa500;
+            border-radius: 50%;
+            margin: 5px 4px 3px;
+            display: inline-block;
+
+            &.correct
+                background: #ffa500 !important;
+
+    .apples
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px 30px;
+   
+        .apple
+            width: 25px;
+            height: 25px;
+            background: #ffa500;
+            display: inline-block;
+            margin: 5px 4px 3px;
+            border-radius: 50%;
+
+            &.ui-draggable-disabled, &.empty
+                border: 1px solid #ffa500;
+                background: #fff;
+
+@media (min-width: 768px)
+    .arrange-apples
+        .targets
+            .target
+                width: 50px;
+                height: 50px;
+                margin: 2px 4px;
+
+        .apples
+            .apple
+                width: 50px;
+                height: 50px;
+                margin: 2px 4px;
+
+@media (min-width: 992px)
+    .arrange-apples
+        .apples
+            padding: 0 30px;
+    

@@ -1,0 +1,75 @@
+extends ../layout.pug
+
+block pagetitle
+    title Arrange apples
+
+block title
+    div(class='container')
+        h1 Arrange apples
+        p(class='subtitle text-center') Arrange N apples into several rows, such that there are equal numbers of apples in each row, and each row has more than one apple in it.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') N = 15
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') N = 17
+
+    div(class='tab-content arrange-apples')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded content')
+                div(class='row')
+                    div(class='col-md-8')
+                        div(class='targets')
+                            each i in [0,1,2,3,4,5,6,7,8,9]
+                                div(class='row')
+                                    each j in [0,1,2,3,4,5,6,7,8,9]
+                                        div(class='target', data-xy=i + '' + j)
+
+                    div(class='col-md-4')
+                        div(class='apples')
+                            each i in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                                div(class='apple')
+
+            p(class='center text-center')
+                button(type='button', data-id="1", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="1", class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded content')
+                div(class='row')
+                    div(class='col-md-8')
+                        div(class='targets')
+                            each i in [0,1,2,3,4,5,6,7,8,9]
+                                div(class='row')
+                                    each j in [0,1,2,3,4,5,6,7,8,9]
+                                        div(class='target', data-xy=i + '' + j)
+
+                    div(class='col-md-4')
+                        div(class='apples')
+                            each i in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+                                div(class='apple')
+
+            p(class='center text-center')
+                button(type='button', data-id="2", class='btn btn-default impossible') It's impossible
+                button(type='button', data-id="2", class='reset', class='btn btn-info') Reset
+
+    div(class='modal fade', id='possible_modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 In fact, it is possible
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+    div(class='modal fade', id='impossible_modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body') 
+                    h4 Bingo!
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='http://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
+    script(src='/javascripts/quiz/arrange-apples.js')

@@ -1,0 +1,69 @@
+extends ../layout.pug
+block extradependencies
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js')
+
+block pagetitle
+    title A Prisoner and a King
+
+block title
+    div(class='container')
+        h1 A Prisoner and a King
+        p(class='subtitle text-center') A King decides to give a prisoner a chance of being set free. The king places two boxes, 15 white, and 15 black balls on the table. The prisoner can distribute the balls between two boxes in any way with the only constraint that no box is empty. After this, the king picks one of the boxes with probability 1/2 each, and picks a random ball from that box (each ball is picked with equal probability). If the ball happens to be white, then the prisoner is freed. Distribute the balls between the two boxes to maximize prisoner’s chances.
+
+block container
+    div(class='center text-center padded content sums-table')
+        table(class='table table-bordered table-striped')
+            thead
+                tr
+                    th
+                    th First box
+                    th Second box
+            tbody
+                tr
+                    td White balls
+                    td
+                        input(type='number', id='whitefirst')
+                    td
+                        input(type='number', id='whitesecond')
+                tr
+                    td Black balls
+                    td
+                        input(type='number', id='blackfirst')
+                    td
+                        input(type='number', id='blacksecond')
+
+    p(class='center text-center')
+        button(type='button', id='btncheck' class='btn btn-default') Check
+
+    div(class='modal fade', id='check_modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body')
+                    p Here is the analysis of the situation:
+                    ul
+                        li The probability that the king picks the first box is &nbsp;
+                            span(id='spanprobfirstbox')
+                        li The probability that the king picks the second box is &nbsp;
+                            span(id='spanprobsecondbox')
+                        li
+                            span There are&nbsp;
+                            span(id='spannumballsfirstbox')
+                            span &nbsp; balls in the first box, thus, the probability to draw any particular ball from the first box is &nbsp;
+                            span(id='spanballfirstbox')
+                        li The same rationale gives us that a particular ball is drawn from the second box with probability &nbsp;
+                            span(id='spanballsecondbox')
+                        li
+                            span There are&nbsp;
+                            span(id='spannumwhiteballsfirstbox')
+                            span &nbsp; white balls in the first box and &nbsp;
+                            span(id='spannumwhiteballssecondbox')
+                            span &nbsp; white balls in the second box. The probability to draw a white ball is equal to the sum of probabilities over all white balls: &nbsp;
+                            span(id='spantotal')
+                    p(id='ultimatecomment')
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+block append scripts
+    script(src='/javascripts/quiz/prisoner-and-king.js')
+

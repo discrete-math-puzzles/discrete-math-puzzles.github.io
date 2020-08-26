@@ -1,0 +1,65 @@
+extends ../layout.pug
+
+block pagetitle
+    title Tiling a chessboard with dominos
+
+block title
+    div(class='container')
+        h1 Tiling a chessboard with dominos
+        p(class='subtitle text-center') Tile the chessboard with 1x2 dominoes! Depending on the complexity level, the chessboard may have some missing squares (shown by rose color) that should not be covered by dominos.
+        
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level0' role='tab' data-toggle='tab' id='tab0') Level 0
+        li(role='presentation')
+            a(href data-target='#level1' role='tab' data-toggle='tab' id='tab1') Level 1
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab' id='tab2') Level 2
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab' id='tab3') Level 3
+        li(role='presentation')
+            a(href data-target='#level4' role='tab' data-toggle='tab' id='tab4') Level 4
+        li(role='presentation')
+            a(href data-target='#level5' role='tab' data-toggle='tab' id='tab5') Level 5
+
+    div(class='center text-center padded')
+        svg(id='svg', class='borderred', width='600', height='600')
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active padded', id='level0')
+            p(class='center text-center')
+                button(type='button', class='reset', class='btn btn-info') Reset
+                button(type='button', id='btnVer', class='btn btn-info') Autotile with vertical dominos
+                button(type='button', id='btnHor', class='btn btn-info') Autotile with horizontal dominos
+                button(type='button', id='btnSpiral', class='btn btn-info') Autotile spirally
+
+        div(role='tabpanel', class='tab-pane padded', id='level1')
+            p(class='center text-center')
+                button(type='button', class='reset', class='btn btn-info') Reset
+                button(type='button', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+
+        div(role='tabpanel', class='tab-pane padded', id='level2')
+            p(class='center text-center')
+                button(type='button', class='reset', class='btn btn-info') Reset
+                button(type='button', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+
+        div(role='tabpanel', class='tab-pane padded', id='level3')
+            p(class='center text-center')
+                button(type='button', class='reset', class='btn btn-info') Reset
+                button(type='button', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+
+        div(role='tabpanel', class='tab-pane padded', id='level4')
+            p(class='center text-center')
+                button(type='button', class='reset', class='btn btn-info') Reset
+                button(type='button', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+
+        div(role='tabpanel', class='tab-pane padded', id='level5')
+            p(class='center text-center')
+                button(type='button', class='reset', class='btn btn-info') Reset
+                button(type='button', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/chessboard-tiling.js')

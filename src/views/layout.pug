@@ -1,0 +1,86 @@
+doctype html
+html(lang='en')
+    head
+        block pagetitle
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='shortcut icon', href='/favicon.png', type='image/png')
+        block extradependencies
+        block scripts
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+            script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+            script(type='text/x-mathjax-config').
+                MathJax.Hub.Config({tex2jax: {
+                    inlineMath: [['$','$'], ['\\(','\\)']]
+                }});
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML')
+            script.
+                (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45519171 = new Ya.Metrika({ id:45519171, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+            noscript
+                div
+                    img(src='https://mc.yandex.ru/watch/45519171', style='position:absolute; left:-9999px;')
+            script(src='/javascripts/core.js')
+
+    body
+        div(class='jumbotron text-center')
+            block title
+
+        div(class='container')
+            block container
+            block error
+
+        div(class='modal fade', id='possible_modal', tabindex='-1')
+            div(class='modal-dialog')
+                div(class='modal-content')
+                    div(class='modal-body')
+                        h4 In fact, it is possible
+                    div(class='modal-footer')
+                        button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+        div(class='modal fade', id='impossible_modal', tabindex='-1')
+            div(class='modal-dialog')
+                div(class='modal-content')
+                    div(class='modal-body')
+                        h4 Bingo!
+                    div(class='modal-footer')
+                        button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+        div(class='modal fade', id='congratulations_modal', tabindex='-1')
+            div(class='modal-dialog')
+                div(class='modal-content')
+                    div(class='modal-body')
+                        h4 Congratulations! You're right!
+                    div(class='modal-footer')
+                        button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+        div(class='modal fade', id='better_solution_modal', tabindex='-1')
+            div(class='modal-dialog')
+                div(class='modal-content')
+                    div(class='modal-body')
+                        h4 In fact, a better solution exists
+                    div(class='modal-footer')
+                        button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+        div(class='modal fade', id='error_modal', tabindex='-1')
+            div(class='modal-dialog')
+                div(class='modal-content')
+                    div(class='modal-body')
+                        h4 Error!
+                        p Something went wrong to send your grade to Coursera.
+                        p Try again, please.
+                    div(class='modal-footer')
+                        button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+        div(class='modal fade', id='fail_modal', tabindex='-1')
+            div(class='modal-dialog')
+                div(class='modal-content')
+                    div(class='modal-body')
+                        h4 Sorry, try again.
+                    div(class='modal-footer')
+                        button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+        div(class='footer')
+            div(class='container') These interactive puzzles are part of two specializations at Coursera: <a href="http://bit.ly/2B6a3Nn">Introduction to Discrete Mathematics for Computer Science</a> and <a href="http://bit.ly/2AYsLpZ">Data Structures and Algorithms</a>. They provide you with a fun way to "invent" the key ideas on your own! Even if you fail to solve some puzzles, the time will not be lost as you will better appreciate the beauty and power of the underlying ideas. Besides more than 50 such puzzles, the specializations contain more than 100 programming challenges. We encourage you to sign up for a session and learn this material while interacting with thousands of other talented students from around the world.</div>
+

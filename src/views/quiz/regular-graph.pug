@@ -1,0 +1,37 @@
+extends ../layout.pug
+
+block pagetitle
+    title Connect Points
+
+block title
+    div(class='container')
+        h1 Connect Points
+        p(class='subtitle text-center') Connect some of the points with segments such that each point is connected with 5 other points.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: N = 10
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: N = 9
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded')
+                svg(id='graph1', class='fixed', width='100%', height='100%')
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded')
+                svg(id='graph2', class='fixed', width='100%', height='100%')
+
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='2', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/regular-graph.js')

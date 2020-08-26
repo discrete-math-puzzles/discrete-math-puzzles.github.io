@@ -1,0 +1,69 @@
+extends ../layout.pug
+
+block pagetitle
+    title Find a number
+
+block title
+    div(class='container')
+        h1 Find a number
+        p(class='subtitle text-center') Find a number that becomes N times smaller if the first digit is removed
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#number1' role='tab' data-toggle='tab') Level 1: N = 17
+        li(role='presentation')
+            a(href data-target='#number2' role='tab' data-toggle='tab') Level 2: N = 27
+        li(role='presentation')
+            a(href data-target='#number3' role='tab' data-toggle='tab') Level 2: N = 37
+        li(role='presentation')
+            a(href data-target='#number4' role='tab' data-toggle='tab') Level 2: N = 47
+
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='number1')
+            div(class='center text-center padded m50')
+                div(class='numbers')
+                    span(class='number-item')
+                        input(class='form-control numberField', placeholder='Type number here')
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', data-id='1', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='check', class='btn btn-info') Check
+                button(type='button', class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='number2')
+            div(class='center text-center padded m50')
+                div(class='numbers')
+                    span(class='number-item')
+                        input(class='form-control numberField', placeholder='Type number here')
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', data-id='2', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='check', class='btn btn-info') Check
+                button(type='button', class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='number3')
+            div(class='center text-center padded m50')
+                div(class='numbers')
+                    span(class='number-item')
+                        input(class='form-control numberField', placeholder='Type number here')
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', data-id='3', class='btn btn-default', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='check', class='btn btn-info') Check
+                button(type='button', class='reset', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='number4')
+            div(class='center text-center padded m50')
+                div(class='numbers')
+                    span(class='number-item')
+                        input(class='form-control numberField', placeholder='Type number here')
+                
+            p(class='center text-center')
+                button(type='button', id='impossible', data-id='4', class='btn btn-default', data-toggle='modal', data-target='#congratulations_modal') It's impossible
+                button(type='button', class='check', class='btn btn-info') Check
+                button(type='button', class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/find-number-2.js')

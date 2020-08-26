@@ -1,0 +1,55 @@
+extends ../layout.pug
+
+block pagetitle
+    title Summing up digits
+
+mixin tabpanel-summing-up-digits(level, possible)
+    div(role='tabpanel', class='tab-pane ' + (level == 1 ? 'active' : ''), id='level' + level)
+        div(class='center text-center padded')
+            each i in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                span.summing-up-digits-nowrap
+                    label.sign
+                        input(type='checkbox', class='padded glyphicon', checked=i % 2 ? 'checked' : undefined)
+                        span
+                    span(class='padded') #{i}
+
+            span #{'='}
+            span(class='padded', id='result') 5
+
+        p(class='center text-center')
+            button(
+                type='button',
+                id=possible ? 'possible' : 'impossible',
+                data-id=level - 1,
+                class='btn btn-default',
+                data-toggle='modal',
+                data-target=possible ? '#possible_modal' : '#congratulations_modal'
+            ) It's impossible
+            button(type='button', class='reset', data-id=level, class='btn btn-info') Reset
+
+        p(class='center text-center')
+            span(id='hint')
+
+block title
+    div(class='container')
+        h1 Summing up Digits
+        p(class='subtitle text-center') Place signs in the expression &plusmn; 1 &plusmn; 2 &plusmn; &hellip; &plusmn; 9 to get as a result the sum&nbsp;N.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        each val,i in [0, 1, 2, 100]
+            li(role='presentation', class=i == 0 ? 'active' : undefined)
+                a(href, data-target='#level' + (i + 1), role='tab', data-toggle='tab') Level #{i + 1}: N = #{val}
+
+    div(class='tab-content')
+        +tabpanel-summing-up-digits(1, false)
+
+        +tabpanel-summing-up-digits(2, true)
+
+        +tabpanel-summing-up-digits(3, false)
+
+        +tabpanel-summing-up-digits(4, false)
+
+
+block append scripts
+    script(src='/javascripts/quiz/summing-up-digits.js')

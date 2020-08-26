@@ -1,0 +1,72 @@
+extends ../layout.pug
+
+block pagetitle
+    title Sums of Rows and Columns
+
+block title
+    div(class='container')
+        h1 Sums of Rows and Columns
+        p(class='subtitle text-center') Fill a 3 x 5 table with integers so that the sum of each row is equal to 20 and the sum of each column is equal to 10.
+
+block container
+    div(class='center text-center padded content sums-table')
+        table(class='table table-bordered table-striped')
+            tbody
+                tr
+                    td
+                        input(type='text', data-id='11')
+                    td
+                        input(type='text', data-id='12')
+                    td
+                        input(type='text', data-id='13')
+                    td
+                        input(type='text', data-id='14')
+                    td
+                        input(type='text', data-id='15')
+                    td
+                        span(data-id='1x') 0
+                tr
+                    td
+                        input(type='text', data-id='21')
+                    td
+                        input(type='text', data-id='22')
+                    td
+                        input(type='text', data-id='23')
+                    td
+                        input(type='text', data-id='24')
+                    td
+                        input(type='text', data-id='25')
+                    td
+                        span(data-id='2x') 0
+                tr
+                    td
+                        input(type='text', data-id='31')
+                    td
+                        input(type='text', data-id='32')
+                    td
+                        input(type='text', data-id='33')
+                    td
+                        input(type='text', data-id='34')
+                    td
+                        input(type='text', data-id='35')
+                    td
+                        span(data-id='3x') 0
+                tr
+                    td
+                        span(data-id='x1') 0
+                    td
+                        span(data-id='x2') 0
+                    td
+                        span(data-id='x3') 0
+                    td
+                        span(data-id='x4') 0
+                    td
+                        span(data-id='x5') 0
+                    td
+    
+    p(class='center text-center')
+        button(type='button', data-id="1", class='btn btn-default impossible') It's impossible
+        button(type='button', data-id="1", class='reset', class='btn btn-info') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/sums-of-rows-and-columns.js')

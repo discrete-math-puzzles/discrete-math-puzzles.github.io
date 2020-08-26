@@ -1,0 +1,54 @@
+extends ../layout.pug
+
+block pagetitle
+    title Map Coloring
+
+block title
+    div(class='container')
+        h1 Map Coloring
+        p(class='subtitle text-center') Color all regions of the map so that no two adjacent regions have the same color.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') Level 1: South America
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') Level 2: The Land of Oz
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') Level 3: Swiss Cantons
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='center text-center padded' style='max-width: 600px; margin: auto' id='mapColoring0')
+                include ../../../public/images/South America.svg
+
+            p(class='center text-center output-map0')
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default submit-map', data-id='1') Check
+                button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='center text-center padded' style='max-width: 600px; margin: auto' id='mapColoring1')
+                include ../../../public/images/OZ.svg
+
+            p(class='center text-center output-map1')
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='2', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default submit-map', data-id='2') Check
+                button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='center text-center padded' style='max-width: 700px; margin: auto' id='mapColoring2')
+                include ../../../public/images/Swiss Cantons.svg
+
+            p(class='center text-center output-map2')
+            p(class='center text-center')
+                button(type='button', id='impossible', class='btn btn-default', data-id='3', data-toggle='modal', data-target='#possible_modal') It's impossible
+                button(type='button', class='btn btn-default submit-map', data-id='3') Check
+                button(type='button', class='reset', data-id='3', class='btn btn-info') Reset
+
+
+block append scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/map-coloring.js')

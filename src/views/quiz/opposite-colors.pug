@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block pagetitle
+    title Two Adjacent Cells of Opposite Colors
+
+block title
+    div(class='container')
+        h1 Two Adjacent Cells of Opposite Colors
+        p(class='subtitle text-center') You are given 20 black and white cells. The leftmost one is white, the rightmost one is black, the colors of all other cells are hidden. You can reveal the color of a cell by clicking on it. Your goal is to find two adjacent cells of different colors by using at most 5 clicks.
+
+block container
+    svg(id='opposite-color-1', class='oppositeColor', width='100%', height='25')
+    p(class='center text-center')
+        button(class='btn btn-info reset', data-id='1') Reset
+    p(class='center text-center')
+        span Number of requests remaining:&nbsp;
+        span(id='probesNum') 5
+    p(class='center text-center')
+        span(id='hint')
+
+block prepend scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js')
+    script(src='/javascripts/quiz/opposite-colors.js')
