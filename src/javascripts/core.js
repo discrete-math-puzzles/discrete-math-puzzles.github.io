@@ -54,31 +54,7 @@ $(function () {
 
         $('.nav-tabs .active').addClass('success');
 
-        if (window.q.getCookie('cId') === 'undefined') {
-            $('#congratulations_modal').modal('show');
-        } else {
-            $.ajax({
-                type: 'POST',
-                url: document.location.href,
-                data: JSON.stringify({
-                    _csrf: window.q.getCookie('csrf'),
-                    connectionId: window.q.getCookie('cId'),
-                    score: Object.keys(results).length,
-                    total: data.length
-                }),
-                contentType: 'application/json; charset=utf-8',
-                success: function(data){
-                    if (window.q.getCookie('cId')) {
-                        $(data.error ? '#error_modal' : '#congratulations_modal').modal('show');
-                    }
-                },
-                error: function(errMsg) {
-                    if (window.q.getCookie('cId')) {
-                        $('#error_modal').modal('show');
-                    }
-                }
-            });
-        }
+        $('#congratulations_modal').modal('show');
     };
 
     // adding core exportable methods to the namespace

@@ -1,6 +1,7 @@
 var coreCss = require('../../stylesheets/style.styl');
 var css = require('../../stylesheets/arthurs-books.styl');
 var core = require('../core');
+var solver = require('./arthurs-books-solver');
 
 $(function () {
     function BookShelf(shelfSelector, order, days, cb) {
