@@ -1,9 +1,7 @@
-var coreCss = require('../../stylesheets/style.styl');
-var css = require('../../stylesheets/list.styl');
-var core = require('../core');
-
 $(function () {
+    console.log('ololo');
     function handleHashChange() {
+        console.log('ololo hash change');
         if (window.location.hash === '') {
             $('.clear-filter').addClass('disabled');
         } else {

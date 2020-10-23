@@ -65,15 +65,15 @@ const createPuzzleConfig = puzzleName => ({
 const config = puzzleNames.map(filename => filename.split('.pug')[0]).map(puzzleName => createPuzzleConfig(puzzleName));
 
 const mainConfig = {
-    entry: './src/javascripts/core.js',
+    entry: './src/javascripts/quiz/list.js',
     output: {
         filename: 'core.bundle.js',
         path: path.resolve(__dirname, 'puzzles'),
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/views/list.pug',
-            filename: 'index.html',
+            template: 'index.html',
+            filename: 'index2.html',
             inject: true,
         }),
         new HtmlWebpackPugPlugin()
@@ -103,6 +103,6 @@ const mainConfig = {
 };
 
 module.exports = [
-    // mainConfig,
-    ...config,
+    mainConfig,
+    // ...config,
 ];

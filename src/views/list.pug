@@ -20,14 +20,14 @@ html(lang='en')
                 li(role='presentation')
                     a(href, data-target='#tags', role='tab', data-toggle='tab') Tags
                 li(class='clear-filter disabled')
-                    a(href='/app/list') Clear filter
+                    a(href='/') Clear filter
 
             div(class='tab-content')
                 div(role='tabpanel', class='tab-pane active', id='alphabet')
                     ul(class='quizzes-list')
                         each val in data.getRawData
                             li
-                                a(href=('/app/quiz-' + val.id), class='title')= val.title
+                                a(href=('/puzzles/' + val.id), class='title')= val.title
                                 each tag in val.tags
                                     a(href=('#' + tag.title.replace(' ', '_')), data-target='#'+tag.title, class='label label-default', style='background-color: ' + tag.color)= tag.title
 
@@ -38,7 +38,7 @@ html(lang='en')
                                 span(class='label label-default', style=('background-color: ' + value.color), id=tag)= tag
 
                                 each quiz in value.items
-                                    a(href=('/app/quiz-' + quiz.id), class='title')= quiz.title
+                                    a(href=('/puzzles/' + quiz.id), class='title')= quiz.title
 
     block scripts
         script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')

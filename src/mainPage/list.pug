@@ -5,8 +5,10 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='style.css')
         link(rel='shortcut icon', href='/favicon.png', type='image/png')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 
     body
         div(class='jumbotron text-center')
@@ -20,7 +22,7 @@ html(lang='en')
                 li(role='presentation')
                     a(href, data-target='#tags', role='tab', data-toggle='tab') Tags
                 li(class='clear-filter disabled')
-                    a(href='/app/list') Clear filter
+                    a(href='') Clear filter
 
             div(class='tab-content')
                 div(role='tabpanel', class='tab-pane active', id='alphabet')
@@ -38,14 +40,32 @@ html(lang='en')
                                 span(class='label label-default', style=('background-color: ' + value.color), id=tag)= tag
 
                                 each quiz in value.items
-                                    a(href=('/app/quiz-' + quiz.id), class='title')= quiz.title
+                                    a(href=('puzzles/' + quiz.id + '/index.html'), class='title')= quiz.title
 
     block scripts
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-        script(src='/javascripts/quiz/list.js')
+        script(src='core.bundle.js')
         script.
             (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45519171 = new Ya.Metrika({ id:45519171, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+        script.
+            (function () {
+                function handleHashChange() {
+                    if (window.location.hash === '') {
+                        $('.clear-filter').addClass('disabled');
+                    } else {
+                        $('.clear-filter').removeClass('disabled');
+
+                        $('a[data-target="#tags"]').click()
+
+                        $('html, body').animate({
+                            scrollTop: $(window.location.hash).offset().top
+                        }, 2000);
+                    }
+                }
+
+                window.onhashchange = handleHashChange;
+
+                handleHashChange();
+            }())
         noscript
              div
                 img(src='https://mc.yandex.ru/watch/45519171', style='position:absolute; left:-9999px;')
