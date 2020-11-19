@@ -25,7 +25,7 @@ block container
             p(class='center text-center')
                 button(type='button', id='possible', class='btn btn-default', data-id='1', data-toggle='modal', data-target='#congratulations_modal') It's impossible
                 button(type='button', class='reset', data-id='1', class='btn btn-info') Reset
-                
+
             p(class='center text-center')
                 span(id='hint')
 
@@ -36,13 +36,14 @@ block container
             p(class='center text-center')
                 button(type='button', id='impossible', class='btn btn-default', data-id='2', data-toggle='modal', data-target='#possible_modal') It's impossible
                 button(type='button', class='reset', data-id='2', class='btn btn-info') Reset
-                
+
             p(class='center text-center')
                 span(id='hint')
 
         div(role='tabpanel', class='tab-pane', id='level2')
             div(class='center text-center padded')
-                svg(id='figureCut2', class="cut")
+                div(class="cutWrapper level2")
+                    svg(id='figureCut2', class="cut level2")
 
             p(class='center text-center')
                 button(type='button', id='impossible', class='btn btn-default', data-id='3', data-toggle='modal', data-target='#possible_modal') It's impossible

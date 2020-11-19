@@ -24,3 +24,42 @@
 
     &.faded
       color: #ddd;
+
+
+.cut
+  position: relative;
+  z-index: 10;
+
+.cutWrapper.level2
+  position: relative;
+  padding: 0;
+  margin: 0 auto 50px;
+  width: 100%;
+  max-width: 550px;
+  list-style-type: none;
+  &:after
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 50%;
+    top: calc((100% - 50px)/4 - 13px);
+    left: 25%;
+    background-image: linear-gradient(
+            45deg,
+            transparent 50%,
+            #5bc0de 50%,
+            #5bc0de 51%,
+            transparent 45%
+            ),
+            linear-gradient(
+                    -45deg,
+                    transparent 50%,
+                    #5bc0de 50%,
+                    #5bc0de 51%,
+                    transparent 45%
+            ),
+            linear-gradient(
+                    90deg,
+                    white 40%,
+                    white 100%
+            );

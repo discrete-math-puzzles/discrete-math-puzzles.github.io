@@ -104,5 +104,5 @@ const mainConfig = {
 
 module.exports = [
     mainConfig,
-    // ...config,
+    ...config,
 ];
