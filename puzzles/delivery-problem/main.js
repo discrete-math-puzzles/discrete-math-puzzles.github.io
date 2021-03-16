@@ -18520,9 +18520,6 @@ var Game_Game = function Game(_ref6) {
   var level = _ref6.level,
       clientStore = _ref6.clientStore;
   var store = new store_Store(level);
-  console.log({
-    level: level
-  });
   return /*#__PURE__*/react_default.a.createElement(GameView, {
     store: store,
     level: level,
@@ -18556,7 +18553,6 @@ var onlyUnique = function onlyUnique(value, index, self) {
 
 var App = mobxreact_esm_observer(function (_ref) {
   var store = _ref.store;
-  console.log('ololo', store.progress);
   return /*#__PURE__*/react_default.a.createElement(esm_Container, {
     fluid: true,
     className: "customFluidContainer"
