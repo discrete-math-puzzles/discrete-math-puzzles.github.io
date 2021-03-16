@@ -78,6 +78,7 @@ const items = [
     {title: 'Activity selection', id: 'activity-selection', tags: [TAGS.algorithms, TAGS.greedy]},
     {title: '21 questions game', id: 'clock-game', tags: [TAGS.algorithms, TAGS.daq, TAGS.recursion]},
     {title: 'Plow Truck', id: 'plow-truck', tags: [TAGS.graphs, TAGS.optimality]},
+    {title: 'Delivery Problem', id: 'delivery-problem', tags: [TAGS.graphs, TAGS.optimality]},
 ];
 
 module.exports = {
