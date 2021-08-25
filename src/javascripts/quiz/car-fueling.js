@@ -2,6 +2,8 @@ var coreCss = require('../../stylesheets/style.styl');
 var css = require('../../stylesheets/car-fueling.styl');
 var core = require('../core');
 
+import img from '../../images/automobile.png';
+
 var DISTANCE_ON_TANK = 3;
 var FULLTANK = 3;
 var DELAY = 500;
