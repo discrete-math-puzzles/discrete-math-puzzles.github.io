@@ -12,4 +12,4 @@ const html = compiledFunction({
 
 console.log(html);
 
-fs.writeFileSync("index.html", html);
+fs.writeFileSync("everything.html", html);
