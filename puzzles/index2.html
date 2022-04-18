@@ -10,179 +10,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
+  <style>
+  </style>
   <body>
     <div class="jumbotron text-center">
       <h1>Interactive Puzzles</h1>
       <p>These interactive puzzles will help you develop your problem solving skills. Try them before attempting to solve the coding challenges described in <a href="http://bit.ly/moocbookpuzzles">Learning Algorithms Through Programming and Puzzle Solving</a> textbook that powers our online specialization <a href="https://www.coursera.org/specializations/data-structures-algorithms">Data Structures and Algorithms</a> at Coursera and <a href="https://www.edx.org/micromasters/ucsandiegox-algorithms-and-data-structures">MicroMasters</a> at edX. Some of these puzzles will also help you to solve problems in our <a href="https://www.coursera.org/specializations/discrete-mathematics">Introduction to Discrete Mathematics for Computer Science Specialization</a> at Coursera.</p>
     </div>
-    <div class="container list">
-      <ul class="nav nav-pills">
-        <li class="active" role="presentation"><a href data-target="#alphabet" role="tab" data-toggle="tab">Alphabet</a></li>
-        <li role="presentation"><a href data-target="#tags" role="tab" data-toggle="tab">Tags</a></li>
-        <li class="clear-filter disabled"><a href="">Clear filter</a></li>
-      </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" role="tabpanel" id="alphabet">
-          <ul class="quizzes-list">
-            <li><a class="title" href="puzzles/15-game/index.html">Game of Fifteen</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/activity-selection/index.html">Activity selection</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#greedy" data-target="#greedy" style="background-color: undefined">greedy</a>
-            </li>
-            <li><a class="title" href="puzzles/antimagic-square/index.html">Antimagic square</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/antivirus-system/index.html">Antivirus system</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/arthurs-books/index.html">Arthur's books</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/balanced-graphs/index.html">Balanced graphs</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/balls-in-boxes/index.html">Balls in boxes</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#greedy" data-target="#greedy" style="background-color: undefined">greedy</a>
-            </li>
-            <li><a class="title" href="puzzles/bridges/index.html">Bridges</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/chessboard-tiling/index.html">Chessboard tiling</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/clock-game/index.html">21 questions game</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#dividenconquer" data-target="#dividenconquer" style="background-color: undefined">dividenconquer</a><a class="label label-default" href="#recursion" data-target="#recursion" style="background-color: #d9534f">recursion</a>
-            </li>
-            <li><a class="title" href="puzzles/cut-the-figure/index.html">Cut the figure</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/find-number/index.html">Find the number</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/find-number-2/index.html">Find the number 2</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/florin-coins/index.html">Florin coins</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-            <li><a class="title" href="puzzles/graph-cliques/index.html">Graph cliques</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/guarinis-puzzle/index.html">Guarinis puzzle</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/hamiltonian-cycle/index.html">Hamiltonian cycle</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/hanoi-towers/index.html">Hanoi towers</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#recursion" data-target="#recursion" style="background-color: #d9534f">recursion</a>
-            </li>
-            <li><a class="title" href="puzzles/job-assignment/index.html">Job assignment</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/largest-number/index.html">Largest concatenate problem</a><a class="label label-default" href="#greedy" data-target="#greedy" style="background-color: undefined">greedy</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/local-maximum/index.html">Local maximum</a><a class="label label-default" href="#dividenconquer" data-target="#dividenconquer" style="background-color: undefined">dividenconquer</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/magic-square/index.html">Magic square</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/make-a-tree/index.html">Make a tree</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/map-coloring/index.html">Map coloring</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/n-bishops/index.html">N bishops</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-            <li><a class="title" href="puzzles/n-diagonals/index.html">N diagonals</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#recursion" data-target="#recursion" style="background-color: #d9534f">recursion</a>
-            </li>
-            <li><a class="title" href="puzzles/n-knights/index.html">N knights</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-            <li><a class="title" href="puzzles/n-queens/index.html">N queens</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-            <li><a class="title" href="puzzles/n-rooks/index.html">N rooks</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-            <li><a class="title" href="puzzles/number-of-paths/index.html">Number of paths</a><a class="label label-default" href="#combinatorics" data-target="#combinatorics" style="background-color: #d9534f">combinatorics</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#dynprog" data-target="#dynprog" style="background-color: undefined">dynprog</a>
-            </li>
-            <li><a class="title" href="puzzles/numbers-in-boxes/index.html">Numbers in boxes</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/numbers-on-chessboard/index.html">Numbers on chessboard</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/opposite-colors/index.html">Opposite colors</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#dividenconquer" data-target="#dividenconquer" style="background-color: undefined">dividenconquer</a><a class="label label-default" href="#recursion" data-target="#recursion" style="background-color: #d9534f">recursion</a>
-            </li>
-            <li><a class="title" href="puzzles/piece-on-chessboard/index.html">Piece on chessboard</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/plow-truck/index.html">Plow Truck</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-            <li><a class="title" href="puzzles/prime/index.html">Prime</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/primitive-calculator/index.html">Primitive calculator</a><a class="label label-default" href="#combinatorics" data-target="#combinatorics" style="background-color: #d9534f">combinatorics</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#dynprog" data-target="#dynprog" style="background-color: undefined">dynprog</a>
-            </li>
-            <li><a class="title" href="puzzles/prisoner-and-king/index.html">Prisoner and king</a><a class="label label-default" href="#probability" data-target="#probability" style="background-color: #d9534f">probability</a>
-            </li>
-            <li><a class="title" href="puzzles/regular-graph/index.html">Regular graph</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a>
-            </li>
-            <li><a class="title" href="puzzles/road-repair/index.html">Road repair</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a>
-            </li>
-            <li><a class="title" href="puzzles/split-weights/index.html">Split weights</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/subway-lines/index.html">Subway lines</a><a class="label label-default" href="#graphs" data-target="#graphs" style="background-color: #5cb85c">graphs</a>
-            </li>
-            <li><a class="title" href="puzzles/summing-up-binomials/index.html">Summing up binomials</a><a class="label label-default" href="#combinatorics" data-target="#combinatorics" style="background-color: #d9534f">combinatorics</a>
-            </li>
-            <li><a class="title" href="puzzles/summing-up-digits/index.html">Summing up digits</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/sums-of-rows-and-columns/index.html">Sums of rows and columns</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/switching-signs/index.html">Switching signs</a><a class="label label-default" href="#combinatorics" data-target="#combinatorics" style="background-color: #d9534f">combinatorics</a>
-            </li>
-            <li><a class="title" href="puzzles/take-the-last-rock/index.html">Take the last rock</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/take-the-last-stone/index.html">Two rocks game</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#dynprog" data-target="#dynprog" style="background-color: undefined">dynprog</a>
-            </li>
-            <li><a class="title" href="puzzles/three-hotels/index.html">Three hotels</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a>
-            </li>
-            <li><a class="title" href="puzzles/three-rocks-game/index.html">Three rocks game</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#dynprog" data-target="#dynprog" style="background-color: undefined">dynprog</a>
-            </li>
-            <li><a class="title" href="puzzles/tossing-coins/index.html">Tossing coins</a><a class="label label-default" href="#probability" data-target="#probability" style="background-color: #d9534f">probability</a>
-            </li>
-            <li><a class="title" href="puzzles/touch-all-segments/index.html">Touch all segments</a><a class="label label-default" href="#algorithms" data-target="#algorithms" style="background-color: #337ab7">algorithms</a><a class="label label-default" href="#greedy" data-target="#greedy" style="background-color: undefined">greedy</a>
-            </li>
-            <li><a class="title" href="puzzles/twice-numbers/index.html">Twice numbers</a><a class="label label-default" href="#discretemath" data-target="#discretemath" style="background-color: #FFA500">discretemath</a><a class="label label-default" href="#optimality" data-target="#optimality" style="background-color: #d9534f">optimality</a>
-            </li>
-          </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <a href="puzzles/plow-truck/index.html">
+            <img src="screens/plowtruck.png" alt="Plow Truck Puzzle" class="img-thumbnail img">
+          </a>
         </div>
-        <div class="tab-pane" role="tabpanel" id="tags">
-          <ul class="quizzes-list tags">
-            <li><span class="label label-default" style="background-color: #FFA500" id="discretemath">discretemath</span><a class="title" href="puzzles/15-game/index.html">Game of Fifteen</a><a class="title" href="puzzles/antimagic-square/index.html">Antimagic square</a><a class="title" href="puzzles/arthurs-books/index.html">Arthur's books</a><a class="title" href="puzzles/balanced-graphs/index.html">Balanced graphs</a><a class="title" href="puzzles/balls-in-boxes/index.html">Balls in boxes</a><a class="title" href="puzzles/chessboard-tiling/index.html">Chessboard tiling</a><a class="title" href="puzzles/cut-the-figure/index.html">Cut the figure</a><a class="title" href="puzzles/find-number/index.html">Find the number</a><a class="title" href="puzzles/find-number-2/index.html">Find the number 2</a><a class="title" href="puzzles/florin-coins/index.html">Florin coins</a><a class="title" href="puzzles/hanoi-towers/index.html">Hanoi towers</a><a class="title" href="puzzles/magic-square/index.html">Magic square</a><a class="title" href="puzzles/n-bishops/index.html">N bishops</a><a class="title" href="puzzles/n-diagonals/index.html">N diagonals</a><a class="title" href="puzzles/n-knights/index.html">N knights</a><a class="title" href="puzzles/n-queens/index.html">N queens</a><a class="title" href="puzzles/n-rooks/index.html">N rooks</a><a class="title" href="puzzles/numbers-in-boxes/index.html">Numbers in boxes</a><a class="title" href="puzzles/numbers-on-chessboard/index.html">Numbers on chessboard</a><a class="title" href="puzzles/opposite-colors/index.html">Opposite colors</a><a class="title" href="puzzles/piece-on-chessboard/index.html">Piece on chessboard</a><a class="title" href="puzzles/prime/index.html">Prime</a><a class="title" href="puzzles/split-weights/index.html">Split weights</a><a class="title" href="puzzles/summing-up-digits/index.html">Summing up digits</a><a class="title" href="puzzles/sums-of-rows-and-columns/index.html">Sums of rows and columns</a><a class="title" href="puzzles/take-the-last-rock/index.html">Take the last rock</a><a class="title" href="puzzles/take-the-last-stone/index.html">Two rocks game</a><a class="title" href="puzzles/three-hotels/index.html">Three hotels</a><a class="title" href="puzzles/three-rocks-game/index.html">Three rocks game</a><a class="title" href="puzzles/twice-numbers/index.html">Twice numbers</a>
-            </li>
-            <li><span class="label label-default" style="background-color: #337ab7" id="algorithms">algorithms</span><a class="title" href="puzzles/activity-selection/index.html">Activity selection</a><a class="title" href="puzzles/antivirus-system/index.html">Antivirus system</a><a class="title" href="puzzles/arthurs-books/index.html">Arthur's books</a><a class="title" href="puzzles/balls-in-boxes/index.html">Balls in boxes</a><a class="title" href="puzzles/bridges/index.html">Bridges</a><a class="title" href="puzzles/clock-game/index.html">21 questions game</a><a class="title" href="puzzles/graph-cliques/index.html">Graph cliques</a><a class="title" href="puzzles/guarinis-puzzle/index.html">Guarinis puzzle</a><a class="title" href="puzzles/hamiltonian-cycle/index.html">Hamiltonian cycle</a><a class="title" href="puzzles/hanoi-towers/index.html">Hanoi towers</a><a class="title" href="puzzles/job-assignment/index.html">Job assignment</a><a class="title" href="puzzles/largest-number/index.html">Largest concatenate problem</a><a class="title" href="puzzles/local-maximum/index.html">Local maximum</a><a class="title" href="puzzles/make-a-tree/index.html">Make a tree</a><a class="title" href="puzzles/map-coloring/index.html">Map coloring</a><a class="title" href="puzzles/n-diagonals/index.html">N diagonals</a><a class="title" href="puzzles/number-of-paths/index.html">Number of paths</a><a class="title" href="puzzles/opposite-colors/index.html">Opposite colors</a><a class="title" href="puzzles/primitive-calculator/index.html">Primitive calculator</a><a class="title" href="puzzles/road-repair/index.html">Road repair</a><a class="title" href="puzzles/take-the-last-stone/index.html">Two rocks game</a><a class="title" href="puzzles/three-rocks-game/index.html">Three rocks game</a><a class="title" href="puzzles/touch-all-segments/index.html">Touch all segments</a>
-            </li>
-            <li><span class="label label-default" style="background-color: undefined" id="greedy">greedy</span><a class="title" href="puzzles/activity-selection/index.html">Activity selection</a><a class="title" href="puzzles/balls-in-boxes/index.html">Balls in boxes</a><a class="title" href="puzzles/largest-number/index.html">Largest concatenate problem</a><a class="title" href="puzzles/touch-all-segments/index.html">Touch all segments</a>
-            </li>
-            <li><span class="label label-default" style="background-color: #5cb85c" id="graphs">graphs</span><a class="title" href="puzzles/antivirus-system/index.html">Antivirus system</a><a class="title" href="puzzles/balanced-graphs/index.html">Balanced graphs</a><a class="title" href="puzzles/bridges/index.html">Bridges</a><a class="title" href="puzzles/graph-cliques/index.html">Graph cliques</a><a class="title" href="puzzles/guarinis-puzzle/index.html">Guarinis puzzle</a><a class="title" href="puzzles/hamiltonian-cycle/index.html">Hamiltonian cycle</a><a class="title" href="puzzles/job-assignment/index.html">Job assignment</a><a class="title" href="puzzles/make-a-tree/index.html">Make a tree</a><a class="title" href="puzzles/map-coloring/index.html">Map coloring</a><a class="title" href="puzzles/plow-truck/index.html">Plow Truck</a><a class="title" href="puzzles/regular-graph/index.html">Regular graph</a><a class="title" href="puzzles/road-repair/index.html">Road repair</a><a class="title" href="puzzles/subway-lines/index.html">Subway lines</a>
-            </li>
-            <li><span class="label label-default" style="background-color: undefined" id="dividenconquer">dividenconquer</span><a class="title" href="puzzles/clock-game/index.html">21 questions game</a><a class="title" href="puzzles/local-maximum/index.html">Local maximum</a><a class="title" href="puzzles/opposite-colors/index.html">Opposite colors</a>
-            </li>
-            <li><span class="label label-default" style="background-color: #d9534f" id="recursion">recursion</span><a class="title" href="puzzles/clock-game/index.html">21 questions game</a><a class="title" href="puzzles/hanoi-towers/index.html">Hanoi towers</a><a class="title" href="puzzles/n-diagonals/index.html">N diagonals</a><a class="title" href="puzzles/opposite-colors/index.html">Opposite colors</a>
-            </li>
-            <li><span class="label label-default" style="background-color: #d9534f" id="optimality">optimality</span><a class="title" href="puzzles/florin-coins/index.html">Florin coins</a><a class="title" href="puzzles/n-bishops/index.html">N bishops</a><a class="title" href="puzzles/n-diagonals/index.html">N diagonals</a><a class="title" href="puzzles/n-knights/index.html">N knights</a><a class="title" href="puzzles/n-queens/index.html">N queens</a><a class="title" href="puzzles/n-rooks/index.html">N rooks</a><a class="title" href="puzzles/plow-truck/index.html">Plow Truck</a><a class="title" href="puzzles/twice-numbers/index.html">Twice numbers</a>
-            </li>
-            <li><span class="label label-default" style="background-color: #d9534f" id="combinatorics">combinatorics</span><a class="title" href="puzzles/number-of-paths/index.html">Number of paths</a><a class="title" href="puzzles/primitive-calculator/index.html">Primitive calculator</a><a class="title" href="puzzles/summing-up-binomials/index.html">Summing up binomials</a><a class="title" href="puzzles/switching-signs/index.html">Switching signs</a>
-            </li>
-            <li><span class="label label-default" style="background-color: undefined" id="dynprog">dynprog</span><a class="title" href="puzzles/number-of-paths/index.html">Number of paths</a><a class="title" href="puzzles/primitive-calculator/index.html">Primitive calculator</a><a class="title" href="puzzles/take-the-last-stone/index.html">Two rocks game</a><a class="title" href="puzzles/three-rocks-game/index.html">Three rocks game</a>
-            </li>
-            <li><span class="label label-default" style="background-color: #d9534f" id="probability">probability</span><a class="title" href="puzzles/prisoner-and-king/index.html">Prisoner and king</a><a class="title" href="puzzles/tossing-coins/index.html">Tossing coins</a>
-            </li>
-          </ul>
+        <div class="col-md-6">
+          <a href="puzzles/n-diagonals/index.html">
+            <img src="screens/diagonals.png" alt="N Diagonals Puzzle" class="img-thumbnail img">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <a href="puzzles/map-coloring/index.html">
+            <img src="screens/map.png" alt="Map Coloring Puzzle" class="img-thumbnail img">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="puzzles/bridges/index.html">
+            <img src="screens/bridges.png" alt="N Diagonals Puzzle" class="img-thumbnail img">
+          </a>
         </div>
       </div>
     </div>
   <script type="text/javascript" src="core.bundle.js"></script></body>
-  <script src="core.bundle.js"></script>
-  <script>(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45519171 = new Ya.Metrika({ id:45519171, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script>
-  <script>
-    (function () {
-        function handleHashChange() {
-            if (window.location.hash === '') {
-                $('.clear-filter').addClass('disabled');
-            } else {
-                $('.clear-filter').removeClass('disabled');
-    
-                $('a[data-target="#tags"]').click()
-    
-                $('html, body').animate({
-                    scrollTop: $(window.location.hash).offset().top
-                }, 2000);
-            }
-        }
-    
-        window.onhashchange = handleHashChange;
-    
-        handleHashChange();
-    }())
-  </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/45519171" style="position:absolute; left:-9999px;"></div>
-  </noscript>
 </html>

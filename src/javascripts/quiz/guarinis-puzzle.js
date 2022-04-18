@@ -1,6 +1,9 @@
 var coreCss = require('../../stylesheets/style.styl');
 var core = require('../core');
 
+import img from '../../images/knight.svg';
+import img2 from '../../images/knight-black.svg';
+
 $(function () {
     var whiteKnightUrl = 'knight.svg';
     var blackKnightUrl = 'knight-black.svg';
