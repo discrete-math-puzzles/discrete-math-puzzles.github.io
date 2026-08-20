@@ -10,9 +10,9 @@ const COLORS = {
 
 const TAGS = {
     algorithms: {title: 'algorithms', color: COLORS.blue},
-    greedy: {title: 'greedy', colors: COLORS.blue},
-    dp: {title: 'dynprog', colors: COLORS.blue},
-    daq: {title: 'dividenconquer', colors: COLORS.blue},
+    greedy: {title: 'greedy', color: COLORS.blue},
+    dp: {title: 'dynprog', color: COLORS.blue},
+    daq: {title: 'dividenconquer', color: COLORS.blue},
     cool: {title: 'cool', color: COLORS.blue},
     awesome: {title: 'awesome', color: COLORS.green},
     another: {title: 'another', color: COLORS.red},
@@ -27,6 +27,7 @@ const TAGS = {
 const items = [
     {title: 'Antimagic square', id: 'antimagic-square', tags: [TAGS.proofs]},
     {title: 'Antivirus system', id: 'antivirus-system', tags: [TAGS.graphs, TAGS.algorithms]},
+    {title: 'Car Fueling', id: 'car-fueling', tags: [TAGS.algorithms, TAGS.greedy]},
     {title: 'Arthur\'s books', id: 'arthurs-books', tags: [TAGS.proofs, TAGS.algorithms]},
     {title: 'Balanced graphs', id: 'balanced-graphs', tags: [TAGS.graphs, TAGS.proofs]},
     {title: 'Balls in boxes', id: 'balls-in-boxes', tags: [TAGS.proofs, TAGS.algorithms, TAGS.greedy]},
