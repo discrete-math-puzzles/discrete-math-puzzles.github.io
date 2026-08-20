@@ -64,6 +64,7 @@ const items = [
     {title: 'Regular graph', id: 'regular-graph', tags: [TAGS.graphs]},
     {title: 'Road repair', id: 'road-repair', tags: [TAGS.graphs, TAGS.algorithms]},
     {title: 'Split weights', id: 'split-weights', tags: [TAGS.proofs]},
+    {title: 'Stable Matching', id: 'stable-matching', tags: [TAGS.algorithms, TAGS.proofs, TAGS.graphs, TAGS.optimality]},
     {title: 'Subway lines', id: 'subway-lines', tags: [TAGS.graphs]},
     {title: 'Summing up binomials', id: 'summing-up-binomials', tags: [TAGS.combinatorics]},
     {title: 'Summing up digits', id: 'summing-up-digits', tags: [TAGS.proofs]},

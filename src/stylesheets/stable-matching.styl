@@ -1,0 +1,120 @@
+.stable-matching
+  margin: 20px 0 10px;
+
+.stable-matching__graph
+  position: relative;
+  padding: 10px 0;
+  max-width: 760px;
+  margin: 0 auto;
+
+.stable-matching__edges
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+.stable-matching__edge
+  stroke: #222;
+  stroke-width: 2;
+  opacity: 0.75;
+
+.stable-matching__edge.is-unstable
+  stroke: #d9534f;
+  stroke-width: 3;
+  opacity: 1;
+
+.stable-matching__sides
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+
+.stable-matching__side
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+.stable-matching__row
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+
+.stable-matching__row--left
+  justify-content: flex-end;
+
+.stable-matching__row--right
+  justify-content: flex-start;
+
+.stable-matching__vertex
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 2px solid #222;
+  background: #fff;
+  font-weight: 600;
+  outline: none;
+
+.stable-matching__vertex.is-selected
+  border-color: #0095ff;
+  box-shadow: 0 0 0 3px rgba(0, 149, 255, 0.25);
+
+.stable-matching__vertex.is-unstable
+  border-color: #d9534f;
+  box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.25);
+
+.stable-matching__prefs
+  max-width: 240px;
+  min-width: 0;
+  font-size: 13px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+
+.stable-matching__row--left .stable-matching__prefs
+  text-align: right;
+  justify-content: flex-end;
+
+.stable-matching__row--right .stable-matching__prefs
+  text-align: left;
+  justify-content: flex-start;
+
+.stable-matching__prefs-line
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+.stable-matching__pref-item
+  padding: 2px 4px;
+  border-radius: 4px;
+
+.stable-matching__pref-item.is-chosen
+  background: rgba(0, 149, 255, 0.12);
+  font-weight: 600;
+
+.stable-matching__pref-item.is-unstable
+  background: rgba(217, 83, 79, 0.12);
+  font-weight: 600;
+
+.stable-matching__actions .btn
+  margin: 0 6px 8px;
+
+.nav-tabs li.success a
+  color: #5cb85c !important;
+
+@media only screen and (max-width: 600px)
+  .stable-matching__graph
+    max-width: 100%;
+
+  .stable-matching__sides
+    gap: 22px;
+
+  .stable-matching__prefs
+    max-width: 160px;
+    font-size: 12px;
+
+  .stable-matching__vertex
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;

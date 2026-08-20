@@ -1,0 +1,78 @@
+extends ../layout.pug
+
+block pagetitle
+    title Stable Matching
+
+block title
+    div(class='container')
+        h1 Stable Matching
+        p(class='subtitle text-center') Construct a stable matching.
+
+block container
+    ul(class='nav nav-tabs', role='tablist')
+        li(role='presentation', class='active')
+            a(href data-target='#level1' role='tab' data-toggle='tab') n = 2
+        li(role='presentation')
+            a(href data-target='#level2' role='tab' data-toggle='tab') n = 3
+        li(role='presentation')
+            a(href data-target='#level3' role='tab' data-toggle='tab') n = 4
+
+    div(class='tab-content')
+        div(role='tabpanel', class='tab-pane active', id='level1')
+            div(class='stable-matching', data-role='stable-matching-level', data-level='1', data-n='2')
+                div(class='stable-matching__graph', data-role='graph')
+                    svg(class='stable-matching__edges', data-role='edges', aria-hidden='true')
+                    div(class='stable-matching__sides')
+                        div(class='stable-matching__side stable-matching__side--left', data-role='side-left')
+                        div(class='stable-matching__side stable-matching__side--right', data-role='side-right')
+
+            p(class='center text-center stable-matching__actions')
+                button(type='button', class='btn btn-default impossible', data-level='1') It's impossible
+                button(type='button', class='btn btn-info check', data-level='1') Check
+                button(type='button', class='btn btn-info reset', data-level='1') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level2')
+            div(class='stable-matching', data-role='stable-matching-level', data-level='2', data-n='3')
+                div(class='stable-matching__graph', data-role='graph')
+                    svg(class='stable-matching__edges', data-role='edges', aria-hidden='true')
+                    div(class='stable-matching__sides')
+                        div(class='stable-matching__side stable-matching__side--left', data-role='side-left')
+                        div(class='stable-matching__side stable-matching__side--right', data-role='side-right')
+
+            p(class='center text-center stable-matching__actions')
+                button(type='button', class='btn btn-default impossible', data-level='2') It's impossible
+                button(type='button', class='btn btn-info check', data-level='2') Check
+                button(type='button', class='btn btn-info reset', data-level='2') Reset
+
+        div(role='tabpanel', class='tab-pane', id='level3')
+            div(class='stable-matching', data-role='stable-matching-level', data-level='3', data-n='4')
+                div(class='stable-matching__graph', data-role='graph')
+                    svg(class='stable-matching__edges', data-role='edges', aria-hidden='true')
+                    div(class='stable-matching__sides')
+                        div(class='stable-matching__side stable-matching__side--left', data-role='side-left')
+                        div(class='stable-matching__side stable-matching__side--right', data-role='side-right')
+
+            p(class='center text-center stable-matching__actions')
+                button(type='button', class='btn btn-default impossible', data-level='3') It's impossible
+                button(type='button', class='btn btn-info check', data-level='3') Check
+                button(type='button', class='btn btn-info reset', data-level='3') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/stable-matching.js')
+
+block append container
+    div(class='modal fade', id='stable_matching_not_perfect_modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body')
+                    h4 The current matching is not perfect. Please extend it.
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
+
+    div(class='modal fade', id='stable_matching_unstable_modal', tabindex='-1')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-body')
+                    h4(data-role='unstable-message')
+                div(class='modal-footer')
+                    button(type='button', class='btn btn-default', data-dismiss='modal') Close
