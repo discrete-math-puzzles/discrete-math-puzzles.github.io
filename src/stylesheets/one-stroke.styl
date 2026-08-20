@@ -1,0 +1,42 @@
+.one-stroke-level
+  max-width: 680px
+  margin: 0 auto 35px
+
+.one-stroke-board
+  display: block
+  width: 100%
+  height: 440px
+  touch-action: none
+  cursor: crosshair
+
+@media (max-width: 680px)
+  .one-stroke-board
+    height: 73.333333vw
+
+.one-stroke-board line
+  fill: none
+  stroke: #999
+  stroke-width: 6
+  stroke-linecap: round
+  stroke-linejoin: round
+
+.one-stroke-board line.used
+  stroke: #5cb85c
+
+.one-stroke-board circle
+  fill: #9bd487
+  pointer-events: none
+
+.one-stroke-board circle.current
+  fill: #337ab7
+  r: 11
+
+.one-stroke-level h3
+  text-align: center
+
+.one-stroke-level
+  padding-top: 25px
+
+.one-stroke-tabs li.solved a
+  color: #5cb85c
+  font-weight: bold

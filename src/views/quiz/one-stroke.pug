@@ -1,0 +1,34 @@
+extends ../layout.pug
+
+block pagetitle
+    title One Stroke
+
+block title
+    div(class='container')
+        h1 One Stroke
+        p(class='subtitle text-center') Draw a figure without lifting a pencil.
+
+block container
+    ul(class='nav nav-tabs one-stroke-tabs', role='tablist')
+        - var levels = [
+        -   {id: 1, impossible: false, shape: 'square-diagonal'},
+        -   {id: 2, impossible: false, shape: 'square-split'},
+        -   {id: 3, impossible: true, shape: 'grid'},
+        -   {id: 4, impossible: false, shape: 'house-split'},
+        -   {id: 5, impossible: true, shape: 'house'},
+        -   {id: 6, impossible: false, shape: 'triangle-square'}
+        - ]
+        each level in levels
+            li(role='presentation' class=level.id === 1 ? 'active' : '')
+                a(href='#one-stroke-level-' + level.id role='tab' data-toggle='tab') Level #{level.id}
+    div(class='tab-content one-stroke-levels')
+        each level in levels
+            div(role='tabpanel' class='tab-pane one-stroke-level ' + (level.id === 1 ? 'active' : '') data-level=level.id data-impossible=level.impossible id='one-stroke-level-' + level.id)
+                svg(class='one-stroke-board' data-shape=level.shape viewBox='0 0 300 220' role='img' aria-label='One stroke puzzle level ' + level.id)
+                p(class='one-stroke-hint text-center') Start at any dot and drag to a connected dot.
+                p(class='text-center')
+                    button(type='button' class='btn btn-default impossible') It's impossible
+                    button(type='button' class='btn btn-info reset') Reset
+
+block append scripts
+    script(src='/javascripts/quiz/one-stroke.js')
